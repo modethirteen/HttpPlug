@@ -2,8 +2,8 @@
 
 A PHP library for plugging into HTTP sockets.
 
-[![travis-ci.org](https://travis-ci.org/modethirteen/HttpPlug.svg?branch=master)](https://travis-ci.org/modethirteen/HttpPlug)
-[![codecov.io](https://codecov.io/github/modethirteen/HttpPlug/coverage.svg?branch=master)](https://codecov.io/github/modethirteen/HttpPlug?branch=master)
+[![travis-ci.org](https://travis-ci.org/modethirteen/HttpPlug.svg?branch=main)](https://travis-ci.org/modethirteen/HttpPlug)
+[![codecov.io](https://codecov.io/github/modethirteen/HttpPlug/coverage.svg?branch=main)](https://codecov.io/github/modethirteen/HttpPlug?branch=main)
 [![Latest Stable Version](https://poser.pugx.org/modethirteen/httpplug/version.svg)](https://packagist.org/packages/modethirteen/httpplug)
 [![Latest Unstable Version](https://poser.pugx.org/modethirteen/httpplug/v/unstable)](https://packagist.org/packages/modethirteen/httpplug)
 
