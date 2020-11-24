@@ -7,7 +7,8 @@ A PHP library for plugging into HTTP sockets.
 [![Latest Stable Version](https://poser.pugx.org/modethirteen/httpplug/version.svg)](https://packagist.org/packages/modethirteen/httpplug)
 [![Latest Unstable Version](https://poser.pugx.org/modethirteen/httpplug/v/unstable)](https://packagist.org/packages/modethirteen/httpplug)
 
-* PHP 7.2, 7.3 (master, 1.x)
+* PHP 7.2, 7.3 (php72, 1.x)
+* PHP 7.4+ (master)
 
 ## Installation
 
