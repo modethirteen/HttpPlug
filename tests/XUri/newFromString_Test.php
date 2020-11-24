@@ -16,6 +16,7 @@
  */
 namespace modethirteen\Http\Tests\XUri;
 
+use modethirteen\Http\Exception\MalformedUriException;
 use modethirteen\Http\Tests\HttpPlugTestCase;
 use modethirteen\Http\XUri;
 
@@ -68,9 +69,9 @@ class newFromString_Test extends HttpPlugTestCase {
 
     /**
      * @test
-     * @expectedException \modethirteen\Http\Exception\MalformedUriException
      */
     public function Invalid_uri_throws_exception() {
+        $this->expectException(MalformedUriException::class);
 
         // arrange
         $uriStr = 'totally_invalid_string';
@@ -81,9 +82,9 @@ class newFromString_Test extends HttpPlugTestCase {
 
     /**
      * @test
-     * @expectedException \modethirteen\Http\Exception\MalformedUriException
      */
     public function Valid_uri_must_have_scheme() {
+        $this->expectException(MalformedUriException::class);
 
         // arrange
         $uriStr = 'test.mindtouch.dev/?a=b&c=d#fragment';
@@ -94,9 +95,9 @@ class newFromString_Test extends HttpPlugTestCase {
 
     /**
      * @test
-     * @expectedException \modethirteen\Http\Exception\MalformedUriException
      */
     public function Valid_uri_must_have_valid_port() {
+        $this->expectException(MalformedUriException::class);
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev:12322342332423/?a=b&c=d#fragment';

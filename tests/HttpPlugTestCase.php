@@ -19,6 +19,7 @@ namespace modethirteen\Http\Tests;
 use modethirteen\Http\Content\JsonContent;
 use modethirteen\Http\Content\TextContent;
 use modethirteen\Http\Content\XmlContent;
+use modethirteen\Http\Exception\HttpPlugUriHostRequiredException;
 use modethirteen\Http\Headers;
 use modethirteen\Http\HttpPlug;
 use modethirteen\Http\Mock\MockPlug;
@@ -47,14 +48,14 @@ class HttpPlugTestCase extends TestCase {
 
     #endregion
 
-    public function setUp() {
+    public function setUp() : void {
         parent::setUp();
         MockRequestMatcher::setIgnoredHeaderNames([
             Headers::HEADER_CONTENT_LENGTH
         ]);
     }
 
-    public function tearDown() {
+    public function tearDown() : void {
         parent::tearDown();
         MockRequestMatcher::setIgnoredHeaderNames([]);
         MockRequestMatcher::setIgnoredQueryParamNames([]);
@@ -67,7 +68,7 @@ class HttpPlugTestCase extends TestCase {
      */
     protected function newMock(string $class) : MockObject {
         return $this->getMockBuilder($class)
-            ->setMethods(get_class_methods($class))
+            ->addMethods(get_class_methods($class))
             ->disableOriginalConstructor()
             ->getMock();
     }
@@ -85,14 +86,14 @@ class HttpPlugTestCase extends TestCase {
      * Return a new HttpPlug instance configured for httpbin.org
      *
      * @return HttpPlug
-     * @throws \modethirteen\Http\Exception\HttpPlugUriHostRequiredException
+     * @throws HttpPlugUriHostRequiredException
      */
     protected function newHttpBinPlug() : HttpPlug {
-        $baseuri = getenv('HTTPBIN_BASEURI');
-        if($baseuri === false || StringUtil::isNullOrEmpty($baseuri)) {
-            $baseuri = 'https://httpbin.org';
+        $text = getenv('HTTPBIN_BASEURI');
+        if($text === false || StringUtil::isNullOrEmpty($text)) {
+            $text = 'https://httpbin.org';
         }
-        $uri = XUri::tryParse($baseuri);
+        $uri = XUri::tryParse($text);
         return (new HttpPlug($uri))->withHttpResultParser(new JsonParser());
     }
 

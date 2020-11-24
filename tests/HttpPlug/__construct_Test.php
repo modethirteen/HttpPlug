@@ -16,6 +16,7 @@
  */
 namespace modethirteen\Http\Tests\HttpPlug;
 
+use modethirteen\Http\Exception\HttpPlugUriHostRequiredException;
 use modethirteen\Http\HttpPlug;
 use modethirteen\Http\Tests\HttpPlugTestCase;
 use modethirteen\Http\XUri;
@@ -24,9 +25,9 @@ class __construct_Test extends HttpPlugTestCase {
 
     /**
      * @test
-     * @expectedException \modethirteen\Http\Exception\HttpPlugUriHostRequiredException
      */
     public function Cannot_construct_plug_with_empty_host() {
+        $this->expectException(HttpPlugUriHostRequiredException::class);
 
         // act
         new HttpPlug(XUri::tryParse('file:///etc/passwd'));

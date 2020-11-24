@@ -38,12 +38,12 @@ class XmlContent implements IContent {
     /**
      * @var ContentType|null
      */
-    private $contentType;
+    private ?ContentType $contentType;
 
     /**
      * @var string
      */
-    private $xml;
+    private string $xml;
 
     /**
      * @param string $xml

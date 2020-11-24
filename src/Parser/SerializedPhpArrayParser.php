@@ -36,8 +36,6 @@ class SerializedPhpArrayParser extends HttpResultParserBase implements IHttpResu
         // TODO (modethirteen, 20180422): ensure its safe to use ContentType::PHP here
         $contentType = $result->getContentType();
         if($contentType !== null && $contentType->toSubType() === 'php') {
-
-            /** @noinspection PhpUnhandledExceptionInspection */
             $this->validateContentLength($result);
             $body = $result->getVal('body', '');
             if(is_string($body) && $body !== '') {

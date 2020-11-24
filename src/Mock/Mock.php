@@ -30,15 +30,15 @@ class Mock {
     /**
      * @var MockRequestMatcher
      */
-    public $request;
+    public MockRequestMatcher $request;
 
     /**
      * @var HttpResult
      */
-    public $result;
+    public HttpResult $result;
 
     /**
      * @var bool
      */
-    public $verify;
+    public bool $verify;
 }

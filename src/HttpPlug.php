@@ -44,47 +44,47 @@ class HttpPlug {
     /**
      * @var int
      */
-    protected $maxAutoRedirects = self::DEFAULT_MAX_AUTO_REDIRECTS;
+    protected int $maxAutoRedirects = self::DEFAULT_MAX_AUTO_REDIRECTS;
 
     /**
      * @var Closure[]
      */
-    protected $preInvokeRequestCallbacks = [];
+    protected array $preInvokeRequestCallbacks = [];
 
     /**
      * @var Closure[]
      */
-    protected $postInvokeCallbacks = [];
+    protected array $postInvokeCallbacks = [];
 
     /**
      * @var IHttpResultParser[]
      */
-    protected $parsers = [];
+    protected array $parsers = [];
 
     /**
-     * @var string - username for basic auth credentials
+     * @var string|null - username for basic auth credentials
      */
-    protected $user;
+    protected ?string $user = null;
 
     /**
      * @var string|null - password for basic auth credentials
      */
-    protected $password = null;
+    protected ?string $password = null;
 
     /**
      * @var IMutableHeaders - stores the headers for the request
      */
-    protected $headers;
+    protected IMutableHeaders $headers;
 
     /**
      * @var int $timeout - sets the request timeout length (s)
      */
-    protected $timeout = 300;
+    protected int $timeout = 300;
 
     /**
      * @var XUri
      */
-    protected $uri;
+    protected XUri $uri;
 
     /**
      * @param XUri $uri - target uri
@@ -249,7 +249,7 @@ class HttpPlug {
     }
 
     /**
-     * Return an instance with query string GET variables appaneded
+     * Return an instance with query string GET variables appended
      *
      * @param string $name - variable name
      * @param mixed $value - variable value
@@ -366,7 +366,7 @@ class HttpPlug {
     /**
      * Performs a PUT request
      *
-     * @param IContent $content - optionally send a content body with the request
+     * @param IContent|null $content - optionally send a content body with the request
      * @return HttpResult
      * @throws HttpResultParserContentExceedsMaxContentLengthException
      * @throws NotImplementedException
@@ -396,10 +396,9 @@ class HttpPlug {
 
     /**
      * @param string $method
-     * @param IContent $content
+     * @param IContent|null $content
      * @return HttpResult
      * @throws HttpResultParserContentExceedsMaxContentLengthException
-     * @throws InvalidArgumentException
      */
     protected function invoke(string $method, IContent $content = null) : object {
         $requestUri = $this->getUri();

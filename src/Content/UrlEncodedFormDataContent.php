@@ -31,7 +31,7 @@ class UrlEncodedFormDataContent implements IContent {
     /**
      * @var string[]
      */
-    private $data;
+    private array $data;
 
     /**
      * @param string[] $data - name/value pairs of form data

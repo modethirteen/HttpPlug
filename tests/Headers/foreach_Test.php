@@ -39,7 +39,7 @@ class foreach_Test extends HttpPlugTestCase {
         }
 
         // assert
-        $this->assertEquals(3, count($results));
+        $this->assertCount(3, $results);
         $this->assertArrayHasKeyValue('X-Foo-Baz', 'bar', $results);
         $this->assertArrayHasKeyValue('X-Bar-Qux', 'baz', $results);
         $this->assertArrayHasKeyValue('Content-Length', '0', $results);

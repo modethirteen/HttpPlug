@@ -27,17 +27,17 @@ class MultiPartFormDataContent implements IContent {
     /**
      * @var ContentType|null
      */
-    private $contentType;
+    private ?ContentType $contentType;
 
     /**
      * @var string[]
      */
-    private $data;
+    private array $data;
 
     /**
      * @var FileContent[]
      */
-    private $files = [];
+    private array $files = [];
 
     /**
      * @param string[] $data - name/value pairs of form data
@@ -55,7 +55,9 @@ class MultiPartFormDataContent implements IContent {
         $this->files = unserialize(serialize($this->files));
     }
 
-    public function getContentType() : ?ContentType { return $this->contentType; }
+    public function getContentType() : ?ContentType {
+        return $this->contentType;
+    }
 
     public function toRaw() : array {
         $data = [];

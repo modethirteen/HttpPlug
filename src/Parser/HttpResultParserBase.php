@@ -30,7 +30,7 @@ abstract class HttpResultParserBase {
     /**
      * @var int|null
      */
-    protected $maxContentLength = null;
+    protected ?int $maxContentLength = null;
 
     /**
      * @param HttpResult $result

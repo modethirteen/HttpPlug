@@ -29,7 +29,7 @@ class HttpResultParserException extends Exception {
     /**
      * @var HttpResult
      */
-    private $result;
+    private HttpResult $result;
 
     /**
      * @param HttpResult $result

@@ -19,7 +19,6 @@ namespace modethirteen\Http\Mock;
 use InvalidArgumentException;
 use modethirteen\Http\Content\IContent;
 use modethirteen\Http\Headers;
-use modethirteen\Http\HttpPlug;
 use modethirteen\Http\IHeaders;
 use modethirteen\Http\IMutableHeaders;
 use modethirteen\Http\XUri;
@@ -36,12 +35,12 @@ class MockRequestMatcher {
     /**
      * @var string[]
      */
-    private static $ignoredQueryParamNames = [];
+    private static array $ignoredQueryParamNames = [];
 
     /**
      * @var string[]
      */
-    private static $ignoredHeaderNames = [];
+    private static array $ignoredHeaderNames = [];
 
     /**
      * Set query param names to ignore during matching
@@ -66,22 +65,22 @@ class MockRequestMatcher {
     /**
      * @var string
      */
-    private $method = HttpPlug::METHOD_GET;
+    private string $method;
 
     /**
      * @var XUri
      */
-    private $uri;
+    private XUri $uri;
 
     /**
      * @var IMutableHeaders
      */
-    private $headers;
+    private IMutableHeaders $headers;
 
     /**
      * @var string|null
      */
-    private $body;
+    private ?string $body = null;
 
     /**
      * @param string $method

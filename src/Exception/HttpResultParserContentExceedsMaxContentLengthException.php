@@ -28,12 +28,12 @@ class HttpResultParserContentExceedsMaxContentLengthException extends HttpResult
     /**
      * @var int
      */
-    private $resultContentLength = 0;
+    private int $resultContentLength;
 
     /**
      * @var int
      */
-    private $maxContentLength = 0;
+    private int $maxContentLength;
 
     /**
      * @param HttpResult $result

@@ -43,7 +43,7 @@ class toArray_Test extends HttpPlugTestCase {
         $results = $headers->toArray();
 
         // assert
-        $this->assertEquals(5, count($results));
+        $this->assertCount(5, $results);
         $this->assertArrayHasKeyValue('X-Foo', ['bar', 'qux, baz'], $results);
         $this->assertArrayHasKeyValue('Deki-Config', ['12345', '67890'], $results);
         $this->assertArrayHasKeyValue('Deki-Stats', [''], $results);
@@ -75,7 +75,7 @@ class toArray_Test extends HttpPlugTestCase {
         $results = $headers->toArray();
 
         // assert
-        $this->assertEquals(5, count($results));
+        $this->assertCount(5, $results);
         $this->assertArrayHasKeyValue('X-Foo', ['bar', 'qux', 'baz'], $results);
         $this->assertArrayHasKeyValue('Deki-Config', ['12345', '67890'], $results);
         $this->assertArrayHasKeyValue('Deki-Stats', [''], $results);

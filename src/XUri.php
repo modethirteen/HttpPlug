@@ -115,11 +115,11 @@ class XUri {
      * pass
      * path
      * query - after the question mark ?
-     * fragment - after the hashmark #
+     * fragment - after the hash #
      *
-     * @var array
+     * @var array<string, string>
      */
-    private $data;
+    private array $data;
 
     private function __construct() {}
 
@@ -258,7 +258,7 @@ class XUri {
      * Return an instance with the specified user information
      *
      * @param string $user - The user name to use for authority
-     * @param string $password - The password associated with $user
+     * @param string|null $password - The password associated with $user
      * @return static
      */
     public function withUserInfo(string $user, string $password = null) : object {

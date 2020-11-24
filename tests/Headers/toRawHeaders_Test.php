@@ -41,7 +41,7 @@ class toRawHeaders_Test extends HttpPlugTestCase {
         $results = $headers->toRawHeaders();
 
         // assert
-        $this->assertEquals(5, count($results));
+        $this->assertCount(5, $results);
         $this->assertEquals([
             'X-Foo: bar, qux, baz',
             'Deki-Config: 12345, 67890',

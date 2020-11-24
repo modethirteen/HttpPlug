@@ -26,12 +26,12 @@ class TextContent implements IContent {
     /**
      * @var string
      */
-    private $text;
+    private string $text;
 
     /**
      * @var ContentType|null
      */
-    private $contentType;
+    private ?ContentType $contentType;
 
     /**
      * @param string $text

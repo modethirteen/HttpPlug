@@ -31,7 +31,7 @@ interface IContent {
     function getContentType() : ?ContentType;
 
     /**
-     * Retrive the content in raw form for curl invocation
+     * Retrieve the content in raw form for curl invocation
      *
      * @return mixed - content implementation decides which raw content type is returned
      */

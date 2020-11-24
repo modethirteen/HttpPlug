@@ -68,17 +68,17 @@ class ContentType {
     /**
      * @var string
      */
-    private $mainType;
+    private string $mainType;
 
     /**
      * @var string[]
      */
-    private $parameters = [];
+    private array $parameters = [];
 
     /**
      * @var string
      */
-    private $subType;
+    private string $subType;
 
     /**
      * @param string $mainType - main part of content-type header line (ex: application)
@@ -88,7 +88,6 @@ class ContentType {
     public function __construct(string $mainType, string $subType, array $parameters = []) {
         $this->mainType = strtolower($mainType);
         $this->subType = strtolower($subType);
-        $this->parameters = [];
         foreach($parameters as $parameter => $value) {
             $this->parameters[strtolower($parameter)] = strtolower($value);
         }

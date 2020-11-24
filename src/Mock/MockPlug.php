@@ -30,29 +30,29 @@ class MockPlug {
     /**
      * @var bool
      */
-    public static $isRegistered = false;
+    public static bool $isRegistered = false;
 
     /**
      * @var Mock[]
      */
-    private static $mocks = [];
+    private static array $mocks = [];
 
     /**
-     * @var MockRequestMatcher[]
+     * @var array<string, MockRequestMatcher>
      * @structure [ [id] => MockRequestMatcher, ... ]
      */
-    private static $calls = [];
+    private static array $calls = [];
 
     /**
      * @var int
      */
-    private static $callCount = 0;
+    private static int $callCount = 0;
 
     /**
      * @var string[]
      * @structure [ id, ... ]
      */
-    private static $matches = [];
+    private static array $matches = [];
 
     /**
      * Assert that call to URI has been made
@@ -182,11 +182,7 @@ class MockPlug {
     public static function getNormalizedMockData() : array {
         $mocks = [];
         foreach(self::$mocks as $id => $mock) {
-
-            /** @var MockRequestMatcher $request */
             $request = $mock->request;
-
-            /** @var HttpResult $result */
             $result = $mock->result;
             $mocks[$id] = [
                 'request' => array_merge($request->toNormalizedArray(), [

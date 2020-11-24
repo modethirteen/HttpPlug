@@ -34,7 +34,7 @@ class Headers implements IMutableHeaders {
      *
      * @var string[]
      */
-    protected static $singleValueHeaders = [
+    protected static array $singleValueHeaders = [
 
         // https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17
         'Content-Type',
@@ -48,7 +48,7 @@ class Headers implements IMutableHeaders {
      *
      * @var string[]
      */
-    protected static $multipleNameValuePairHeaders = [
+    protected static array $multipleNameValuePairHeaders = [
 
         /**
          * http://tools.ietf.org/html/rfc6265: Origin servers SHOULD NOT fold multiple Set-Cookie header fields into a single header field. The usual
@@ -98,15 +98,15 @@ class Headers implements IMutableHeaders {
     }
 
     /**
-     * @var array
+     * @var array<string, array<string>>
      * @structure name => [ value, ... ]
      */
-    private $headers = [];
+    private array $headers = [];
 
     /**
-     * @var array - list of keys in the map
+     * @var array<mixed> - list of keys in the map
      */
-    private $names = [];
+    private array $names = [];
 
     /**
      * @var mixed - current key
@@ -116,7 +116,7 @@ class Headers implements IMutableHeaders {
     /**
      * @var bool - split added raw headers on commas?
      */
-    private $isRawHeaderCommaSeparationEnabled = false;
+    private bool $isRawHeaderCommaSeparationEnabled = false;
 
     public function __clone() {
 

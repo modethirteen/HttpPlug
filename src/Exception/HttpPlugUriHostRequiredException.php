@@ -24,7 +24,7 @@ class HttpPlugUriHostRequiredException extends Exception {
     /**
      * @var XUri
      */
-    private $uri;
+    private XUri $uri;
 
     /**
      * @param XUri $uri
