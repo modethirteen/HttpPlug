@@ -204,7 +204,7 @@ You are encouraged to explore the library [classes](src) and [tests](tests) to l
 
 ## Development and Testing
 
-Contributions are always welcome from the community as ([there are defects and enhancements to address](https://github.com/modethirteen/HttpPlug/issues)).
+Contributions are always welcome from the community ([there are defects and enhancements to address](https://github.com/modethirteen/HttpPlug/issues)).
 
 The library is tested through a combination of [PHPUnit](https://github.com/sebastianbergmann/phpunit), [`MockPlug`](src/Mock) (an interceptor that matches `HttpPlug` invocations and returns mocked responses), and actual [cURL](https://www.php.net/manual/en/book.curl.php)-driven HTTP requests to a locally hosted [httpbin](https://httpbin.org) server. Further code quality is checked using [PHPStan](https://github.com/phpstan/phpstan) (PHP Static Analysis Tool).
 
