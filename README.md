@@ -1,11 +1,11 @@
-# HttpPlug
+# HyperPlug
 
 A PHP library for plugging into HTTP sockets.
 
-[![travis-ci.org](https://travis-ci.org/modethirteen/HttpPlug.svg?branch=main)](https://travis-ci.org/modethirteen/HttpPlug)
-[![codecov.io](https://codecov.io/github/modethirteen/HttpPlug/coverage.svg?branch=main)](https://codecov.io/github/modethirteen/HttpPlug?branch=main)
-[![Latest Stable Version](https://poser.pugx.org/modethirteen/httpplug/version.svg)](https://packagist.org/packages/modethirteen/httpplug)
-[![Latest Unstable Version](https://poser.pugx.org/modethirteen/httpplug/v/unstable)](https://packagist.org/packages/modethirteen/httpplug)
+[![travis-ci.org](https://travis-ci.org/modethirteen/HyperPlug.svg?branch=main)](https://travis-ci.org/modethirteen/HyperPlug)
+[![codecov.io](https://codecov.io/github/modethirteen/HyperPlug/coverage.svg?branch=main)](https://codecov.io/github/modethirteen/HyperPlug?branch=main)
+[![Latest Stable Version](https://poser.pugx.org/modethirteen/hyperplug/version.svg)](https://packagist.org/packages/modethirteen/hyperplug)
+[![Latest Unstable Version](https://poser.pugx.org/modethirteen/hyperplug/v/unstable)](https://packagist.org/packages/modethirteen/hyperplug)
 
 * PHP 7.2, 7.3 (php72, 1.x)
 * PHP 7.4+ (master)
@@ -17,15 +17,15 @@ Use [Composer](https://getcomposer.org/). There are two ways to add this library
 From the composer CLI:
 
 ```sh
-./composer.phar require modethirteen/httpplug
+./composer.phar require modethirteen/hyperplug
 ```
 
-Or add modethirteen/httpplug to your project's composer.json:
+Or add modethirteen/hyperplug to your project's composer.json:
 
 ```json
 {
     "require": {
-        "modethirteen/httpplug": "dev-master"
+        "modethirteen/hyperplug": "dev-master"
     }
 }
 ```
@@ -39,7 +39,7 @@ Assuming you have setup Composer's autoloader, the library can be found in the `
 A quick example:
 
 ```php
-$plug = new HttpPlug(XUri::newFromString('https://api.example.com/v2'))
+$plug = new HyperPlug(XUri::newFromString('https://api.example.com/v2'))
     ->withHttpResultParser((new JsonParser())
 $result = $plug->at('users', 'bob')
     ->get();
@@ -81,8 +81,8 @@ foreach($params as $param => $value) {
 // what does our URL look like now?
 $result = $uri->toString(); // https://api.example.com/v3/widgets?xyzzy=plugh&baz=abc
 
-// we can give our XUri object to a HttpPlug to create a client
-$plug = new HttpPlug($uri);
+// we can give our XUri object to a HyperPlug to create a client
+$plug = new HyperPlug($uri);
 
 // like every object in this library, attaching new values or behaviors to plugs is by default immutable
 // ...and returns a new object reference
@@ -205,13 +205,13 @@ You are encouraged to explore the library [classes](src) and [tests](tests) to l
 
 ## Development and Testing
 
-Contributions are always welcome from the community ([there are defects and enhancements to address](https://github.com/modethirteen/HttpPlug/issues)).
+Contributions are always welcome from the community ([there are defects and enhancements to address](https://github.com/modethirteen/HyperPlug/issues)).
 
-The library is tested through a combination of [PHPUnit](https://github.com/sebastianbergmann/phpunit), [`MockPlug`](src/Mock) (an interceptor that matches `HttpPlug` invocations and returns mocked responses), and actual [cURL](https://www.php.net/manual/en/book.curl.php)-driven HTTP requests to a locally hosted [httpbin](https://httpbin.org) server. Further code quality is checked using [PHPStan](https://github.com/phpstan/phpstan) (PHP Static Analysis Tool).
+The library is tested through a combination of [PHPUnit](https://github.com/sebastianbergmann/phpunit), [`MockPlug`](src/Mock) (an interceptor that matches `HyperPlug` invocations and returns mocked responses), and actual [cURL](https://www.php.net/manual/en/book.curl.php)-driven HTTP requests to a locally hosted [httpbin](https://httpbin.org) server. Further code quality is checked using [PHPStan](https://github.com/phpstan/phpstan) (PHP Static Analysis Tool).
 
 ```sh
-# fork and clone the HttpPlug repository
-git clone git@github.com:{username}/HttpPlug.git
+# fork and clone the HyperPlug repository
+git clone git@github.com:{username}/HyperPlug.git
 
 # install dependencies
 composer install
