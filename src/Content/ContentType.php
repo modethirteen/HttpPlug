@@ -85,7 +85,7 @@ class ContentType {
      * @param string $subType - sub type of content-type header line (ex: json)
      * @param string[] $parameters - key value pairs of parameters (ex: ['charset' => 'utf-8']
      */
-    public function __construct(string $mainType, string $subType, array $parameters = []) {
+    final public function __construct(string $mainType, string $subType, array $parameters = []) {
         $this->mainType = strtolower($mainType);
         $this->subType = strtolower($subType);
         foreach($parameters as $parameter => $value) {

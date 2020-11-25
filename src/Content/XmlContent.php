@@ -48,7 +48,7 @@ class XmlContent implements IContent {
     /**
      * @param string $xml
      */
-    public function __construct(string $xml) {
+    final public function __construct(string $xml) {
         $this->contentType = ContentType::newFromString(ContentType::XML);
         $this->xml = $xml;
     }

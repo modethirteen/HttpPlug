@@ -121,7 +121,7 @@ class XUri {
      */
     private array $data;
 
-    private function __construct() {}
+    final private function __construct() {}
 
     #region URI data accessors
 

@@ -16,6 +16,8 @@
  */
 namespace modethirteen\Http\Content;
 
+use modethirteen\Http\Exception\JsonContentCannotSerializeArrayException;
+
 /**
  * Class JsonContent
  *
@@ -28,9 +30,14 @@ class JsonContent implements IContent {
      *
      * @param array $json
      * @return static
+     * @throws JsonContentCannotSerializeArrayException
      */
     public static function newFromArray(array $json) : object {
-        return new static(json_encode($json));
+        $text = json_encode($json);
+        if($text === false) {
+            throw new JsonContentCannotSerializeArrayException($json);
+        }
+        return new static($text);
     }
 
     /**
@@ -46,7 +53,7 @@ class JsonContent implements IContent {
     /**
      * @param string $json
      */
-    public function __construct(string $json) {
+    final public function __construct(string $json) {
         $this->contentType = ContentType::newFromString(ContentType::JSON);
         $this->json = $json;
     }

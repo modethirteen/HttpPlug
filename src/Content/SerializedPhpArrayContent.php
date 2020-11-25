@@ -46,7 +46,7 @@ class SerializedPhpArrayContent implements IContent {
     /**
      * @param string $serialized
      */
-    public function __construct(string $serialized) {
+    final public function __construct(string $serialized) {
         $this->contentType = ContentType::newFromString(ContentType::PHP);
         $this->serialized = $serialized;
     }
