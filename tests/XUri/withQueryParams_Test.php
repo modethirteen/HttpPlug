@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * HttpPlug
+ * HyperPlug
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,10 +17,10 @@
 namespace modethirteen\Http\Tests\XUri;
 
 use modethirteen\Http\QueryParams;
-use modethirteen\Http\Tests\HttpPlugTestCase;
+use modethirteen\Http\Tests\PlugTestCase;
 use modethirteen\Http\XUri;
 
-class withQueryParams_Test extends HttpPlugTestCase {
+class withQueryParams_Test extends PlugTestCase {
 
     /**
      * @test

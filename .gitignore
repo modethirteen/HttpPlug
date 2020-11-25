@@ -1,6 +1,6 @@
-.idea
-phpunit.xml
 .phpunit.result.cache
+.idea/
+phpunit.xml
 composer.lock
 composer.phar
 vendor/

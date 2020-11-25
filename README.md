@@ -39,8 +39,8 @@ Assuming you have setup Composer's autoloader, the library can be found in the `
 A quick example:
 
 ```php
-$plug = new HyperPlug(XUri::newFromString('https://api.example.com/v2'))
-    ->withHttpResultParser((new JsonParser())
+$plug = new Plug(XUri::newFromString('https://api.example.com/v2'))
+    ->withResultParser(new JsonParser());
 $result = $plug->at('users', 'bob')
     ->get();
 if($result->isSuccess()) {
@@ -59,18 +59,18 @@ $uri = XUri::newFromString('http://api.example.com/v3')
     // every step in a URL builder returns an immutable XUri object
     ->withScheme('https')
     ->at('widgets')
-    ->withQueryParam('xyzzy', 'plugh');
+    ->withQueryParam('xyzzy', 'plugh')
     ->withQueryParams(QueryParams::newFromArray([
         'bar' => 'qux',
         'baz' => 'fred'
     ]))
-    ->withoutQueryParam('bar')
+    ->withoutQueryParam('bar');
 
 // QueryParams objects are normally immutable
 $params = $uri->getQueryParams();
 
 // we can change the data structure of a QueryParams object if we must
-$params = $params->toMutableQueryParams()
+$params = $params->toMutableQueryParams();
 $params->set('baz', 'abc');
 
 // QueryParams are also iterable
@@ -81,8 +81,8 @@ foreach($params as $param => $value) {
 // what does our URL look like now?
 $result = $uri->toString(); // https://api.example.com/v3/widgets?xyzzy=plugh&baz=abc
 
-// we can give our XUri object to a HyperPlug to create a client
-$plug = new HyperPlug($uri);
+// we can give our XUri object to a Plug to create a client
+$plug = new Plug($uri);
 
 // like every object in this library, attaching new values or behaviors to plugs is by default immutable
 // ...and returns a new object reference
@@ -102,19 +102,19 @@ $plug = $plug->withAutoRedirects(2);
 // HTTP requests often need HTTP headers
 $plug = $plug->withHeader('X-FcStPauli', 'hells')
     ->withAddedHeader('X-FcStPauli', 'bells')
-    ->withHeader('X-HSV', 'you\'ll never walk again')
+    ->withHeader('X-HSV', 'you\'ll never walk again');
 
 // ...or not
 $plug = $plug->withoutHeader('X-HSV');
 
 // the Headers object, like XUri and QueryParams, is normally immutable
 $headers = $plug->getHeaders();
-$result = $headers->getHeader('X-FcStPauli') // ['hells', 'bells']
-$result = $headers->getHeaderLine('X-FcStPauli') // X-HSV: hells, bells
+$result = $headers->getHeader('X-FcStPauli'); // ['hells', 'bells']
+$result = $headers->getHeaderLine('X-FcStPauli'); // X-HSV: hells, bells
 
 // but if you really want to...
 $mutableHeaders = $headers->toMutableHeaders();
-$mutableHeaders->set('X-HSV', 'keiner mag den hsv')
+$mutableHeaders->set('X-HSV', 'keiner mag den hsv');
 
 // a Headers object is iterable
 foreach($mutableHeaders as $header => $values) {
@@ -151,16 +151,16 @@ $plug = $plug->withPreInvokeCallback(function(XUri $uri, IHeaders $headers) {
 });
 
 // maybe we want to attach some special handlin that always executes when we receive an HTTP response?
-$plug = $plug->withPostInvokeCallback(function(HttpResult $result) {
+$plug = $plug->withPostInvokeCallback(function(Result $result) {
 
     // perhaps there is special behavior to always trigger based on the HTTP response status code?
     if($result->is(403)) {
     }
 });
 
-// HTTP responses can be parsed from text into traversable data structures by attaching one or more HttpResultParser objects
+// HTTP responses can be parsed from text into traversable data structures by attaching one or more ResultParser objects
 // ...parsing can be possibly memory intensive, so limits can be put on the allowed size of a response to parse
-$plug = $plug->withHttpResultParser((new JsonParser())->withMaxContentLength(640000));
+$plug = $plug->withResultParser((new JsonParser())->withMaxContentLength(640000));
 
 // fetching resources is handled via HTTP GET
 $result = $plug->get();
@@ -180,7 +180,7 @@ $result = $plug->put(new FileContent('/path/to/file'));
 $result = $plug->post(new UrlEncodedFormDataContent([
     'e' => 'f',
     'g' => 'h'
-]);
+]));
 $result = $plug->post(JsonContent::newFromArray([
     'a' => [
         'multi-dimensional' => [

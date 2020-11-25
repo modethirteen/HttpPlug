@@ -17,8 +17,6 @@
 namespace modethirteen\Http\Exception;
 
 use Exception;
-use modethirteen\Http\HttpResult;
-use Throwable;
 
 /**
  * Class JsonContentCannotEncodeArrayException

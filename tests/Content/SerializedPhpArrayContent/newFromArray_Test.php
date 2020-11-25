@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * HttpPlug
+ * HyperPlug
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,9 @@ namespace modethirteen\Http\Tests\Content\SerializedPhpArrayContent;
 
 use modethirteen\Http\Content\ContentType;
 use modethirteen\Http\Content\SerializedPhpArrayContent;
-use modethirteen\Http\Tests\HttpPlugTestCase;
+use modethirteen\Http\Tests\PlugTestCase;
 
-class newFromArray_Test extends HttpPlugTestCase {
+class newFromArray_Test extends PlugTestCase {
 
     /**
      * @test
