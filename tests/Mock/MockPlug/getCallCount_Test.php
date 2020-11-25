@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * HttpPlug
+ * HyperPlug
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,13 +19,13 @@ namespace modethirteen\Http\Tests\Mock\MockPlug;
 use modethirteen\Http\Content\ContentType;
 use modethirteen\Http\Content\TextContent;
 use modethirteen\Http\Headers;
-use modethirteen\Http\HttpPlug;
-use modethirteen\Http\HttpResult;
 use modethirteen\Http\Mock\MockPlug;
-use modethirteen\Http\Tests\HttpPlugTestCase;
+use modethirteen\Http\Plug;
+use modethirteen\Http\Result;
+use modethirteen\Http\Tests\PlugTestCase;
 use modethirteen\Http\XUri;
 
-class getCallCount_Test extends HttpPlugTestCase  {
+class getCallCount_Test extends PlugTestCase  {
 
     /**
      * @test
@@ -35,25 +35,25 @@ class getCallCount_Test extends HttpPlugTestCase  {
         // arrange
         $uri1 = XUri::tryParse('test://example.com/@api/deki/pages/=foo');
         MockPlug::register(
-            $this->newDefaultMockRequestMatcher(HttpPlug::METHOD_GET, $uri1)
+            $this->newDefaultMockRequestMatcher(Plug::METHOD_GET, $uri1)
                 ->withHeaders(Headers::newFromHeaderNameValuePairs([
                     ['X-Foo', 'bar'],
                     ['X-Baz', 'qux']
                 ])),
-            (new HttpResult())->withStatus(200)
+            (new Result())->withStatus(200)
         );
-        (new HttpPlug($uri1))->get();
+        (new Plug($uri1))->get();
         $uri2 = XUri::tryParse('test://example.com/@api/deki/pages/=bar/contents');
         MockPlug::register(
-            $this->newDefaultMockRequestMatcher(HttpPlug::METHOD_POST, $uri2)
+            $this->newDefaultMockRequestMatcher(Plug::METHOD_POST, $uri2)
                 ->withHeaders(Headers::newFromHeaderNameValuePairs([
                     ['X-Qux', 'foo'],
                     [Headers::HEADER_CONTENT_TYPE, ContentType::TEXT]
                 ]))
                 ->withBody('string'),
-            (new HttpResult())->withStatus(200)
+            (new Result())->withStatus(200)
         );
-        (new HttpPlug($uri2))->withHeader('X-Qux', 'foo')->post(new TextContent('string'));
+        (new Plug($uri2))->withHeader('X-Qux', 'foo')->post(new TextContent('string'));
 
         // act
         $count = MockPlug::getCallCount();

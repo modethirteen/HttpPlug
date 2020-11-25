@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * HttpPlug
+ * HyperPlug
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,12 @@
  */
 namespace modethirteen\Http\Mock;
 
-use modethirteen\Http\HttpResult;
+use modethirteen\Http\Result;
 
 /**
  * Class MockPlug
  *
- * A global HttpPlug interceptor for testing
+ * A global HyperPlug interceptor for testing
  *
  * @package modethirteen\Http\Mock
  */
@@ -91,11 +91,11 @@ class MockPlug {
      * New request and result to mock
      *
      * @param MockRequestMatcher $request
-     * @param HttpResult $result
+     * @param Result $result
      * @param bool $verify - verify when all registered uri calls are checked
      * @return void
      */
-    public static function register(MockRequestMatcher $request, HttpResult $result, bool $verify = true) : void {
+    public static function register(MockRequestMatcher $request, Result $result, bool $verify = true) : void {
 
         // ensure content type header is set in the same manner as curl will set it
         if($result->getVal('type') === null && $result->getHeaders()->hasHeader('Content-Type')) {
@@ -113,9 +113,9 @@ class MockPlug {
      * Get mocked response data
      *
      * @param MockRequestMatcher $request
-     * @return HttpResult|null
+     * @return Result|null
      */
-    public static function getHttpResult(MockRequestMatcher $request) : ?HttpResult {
+    public static function getResult(MockRequestMatcher $request) : ?Result {
         $id = $request->getMatcherId();
 
         // log the call
@@ -186,7 +186,7 @@ class MockPlug {
             /** @var MockRequestMatcher $request */
             $request = $mock->request;
 
-            /** @var HttpResult $result */
+            /** @var Result $result */
             $result = $mock->result;
             $mocks[$id] = [
                 'request' => array_merge($request->toNormalizedArray(), [

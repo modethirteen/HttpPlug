@@ -1,5 +1,5 @@
 {
-  "name": "modethirteen/httpplug",
+  "name": "modethirteen/hyperplug",
   "description": "A PHP library for plugging into HTTP sockets",
   "type": "library",
   "license": "Apache-2.0",
@@ -11,7 +11,7 @@
     }
   ],
   "support": {
-    "issues": "https://github.com/modethirteen/httpplug/issues"
+    "issues": "https://github.com/modethirteen/hyperplug/issues"
   },
   "require": {
     "php": ">=7.2.0",

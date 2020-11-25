@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * HttpPlug
+ * HyperPlug
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
  */
 namespace modethirteen\Http\Mock;
 
-use modethirteen\Http\HttpResult;
+use modethirteen\Http\Result;
 
 /**
  * Class Mock
@@ -33,7 +33,7 @@ class Mock {
     public $request;
 
     /**
-     * @var HttpResult
+     * @var Result
      */
     public $result;
 

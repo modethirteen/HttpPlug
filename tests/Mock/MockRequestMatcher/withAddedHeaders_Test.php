@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * HttpPlug
+ * HyperPlug
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,12 @@ namespace modethirteen\Http\Tests\Mock\MockRequestMatcher;
 use modethirteen\Http\Content\ContentType;
 use modethirteen\Http\Content\UrlEncodedFormDataContent;
 use modethirteen\Http\Headers;
-use modethirteen\Http\HttpPlug;
 use modethirteen\Http\Mock\MockRequestMatcher;
-use modethirteen\Http\Tests\HttpPlugTestCase;
+use modethirteen\Http\Plug;
+use modethirteen\Http\Tests\PlugTestCase;
 use modethirteen\Http\XUri;
 
-class withAddedHeaders_Test extends HttpPlugTestCase  {
+class withAddedHeaders_Test extends PlugTestCase  {
 
     /**
      * @test
@@ -32,7 +32,7 @@ class withAddedHeaders_Test extends HttpPlugTestCase  {
     public function Can_add_headers() {
 
         // arrange
-        $matcher = (new MockRequestMatcher(HttpPlug::METHOD_POST, XUri::tryParse('http://example.com/bazz')))
+        $matcher = (new MockRequestMatcher(Plug::METHOD_POST, XUri::tryParse('http://example.com/bazz')))
             ->withHeaders(Headers::newFromHeaderNameValuePairs([
                 ['X-Qux', 'foo']
             ]))

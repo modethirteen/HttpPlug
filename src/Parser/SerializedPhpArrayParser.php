@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * HttpPlug
+ * HyperPlug
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,22 +16,22 @@
  */
 namespace modethirteen\Http\Parser;
 
-use modethirteen\Http\HttpResult;
+use modethirteen\Http\Result;
 
 /**
  * Class SerializedPhpArrayParser
  *
  * @package modethirteen\Http\Parser
  */
-class SerializedPhpArrayParser extends HttpResultParserBase implements IHttpResultParser {
+class SerializedPhpArrayParser extends ResultParserBase implements IResultParser {
 
-    public function withMaxContentLength(int $length) : IHttpResultParser {
+    public function withMaxContentLength(int $length) : IResultParser {
         $parser = clone $this;
         $parser->maxContentLength = $length;
         return $parser;
     }
 
-    public function toParsedResult(HttpResult $result) : HttpResult {
+    public function toParsedResult(Result $result) : Result {
 
         // TODO (modethirteen, 20180422): ensure its safe to use ContentType::PHP here
         $contentType = $result->getContentType();

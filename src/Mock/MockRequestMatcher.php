@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * HttpPlug
+ * HyperPlug
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,9 +19,9 @@ namespace modethirteen\Http\Mock;
 use InvalidArgumentException;
 use modethirteen\Http\Content\IContent;
 use modethirteen\Http\Headers;
-use modethirteen\Http\HttpPlug;
 use modethirteen\Http\IHeaders;
 use modethirteen\Http\IMutableHeaders;
+use modethirteen\Http\Plug;
 use modethirteen\Http\XUri;
 
 /**
@@ -66,7 +66,7 @@ class MockRequestMatcher {
     /**
      * @var string
      */
-    private $method = HttpPlug::METHOD_GET;
+    private $method = Plug::METHOD_GET;
 
     /**
      * @var XUri
