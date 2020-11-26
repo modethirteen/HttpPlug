@@ -8,7 +8,7 @@ A PHP library for plugging into HTTP sockets.
 [![Latest Unstable Version](https://poser.pugx.org/modethirteen/hyperplug/v/unstable)](https://packagist.org/packages/modethirteen/hyperplug)
 
 * PHP 7.2, 7.3 (php72, 1.x)
-* PHP 7.4+ (master)
+* PHP 7.4+ (main)
 
 ## Installation
 
@@ -25,12 +25,12 @@ Or add modethirteen/hyperplug to your project's composer.json:
 ```json
 {
     "require": {
-        "modethirteen/hyperplug": "dev-master"
+        "modethirteen/hyperplug": "dev-main"
     }
 }
 ```
 
-`dev-master` is the master development branch. If you are using this library in a production environment, it is advised that you use a stable release.
+`dev-main` is the main development branch. If you are using this library in a production environment, it is advised that you use a stable release.
 
 Assuming you have setup Composer's autoloader, the library can be found in the `modethirteen\Http\` namespace.
 
