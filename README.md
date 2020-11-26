@@ -220,7 +220,7 @@ composer install
 docker-compose up -d
 
 # run static analysis checks
-vendor/bin/phpstan analyse --level 7 src
+vendor/bin/phpstan analyse
 
 # run tests
 vendor/bin/phpunit --configuration phpunit.xml.dist
