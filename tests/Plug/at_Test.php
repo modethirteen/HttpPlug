@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace modethirteen\Http\Tests\HyperPlug;
+namespace modethirteen\Http\Tests\Plug;
 
 use modethirteen\Http\Plug;
 use modethirteen\Http\Tests\PlugTestCase;
@@ -45,7 +45,7 @@ class at_Test extends PlugTestCase  {
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com'));
         $object = new class {
-            public function __toString() {
+            public function __toString() : string {
                 return 'xyz';
             }
         };

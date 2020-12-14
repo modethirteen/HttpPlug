@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace modethirteen\Http\Tests\HyperPlug;
+namespace modethirteen\Http\Tests\Plug;
 
 use modethirteen\Http\Content\TextContent;
 use modethirteen\Http\Exception\NotImplementedException;

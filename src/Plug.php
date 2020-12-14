@@ -47,12 +47,12 @@ class Plug {
     protected int $maxAutoRedirects = self::DEFAULT_MAX_AUTO_REDIRECTS;
 
     /**
-     * @var Closure[]
+     * @var array<Closure>
      */
     protected array $preInvokeRequestCallbacks = [];
 
     /**
-     * @var Closure[]
+     * @var array<Closure>
      */
     protected array $postInvokeCallbacks = [];
 
