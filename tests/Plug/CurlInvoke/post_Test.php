@@ -147,7 +147,9 @@ TEXT
         $body = $result->getBody();
         $this->assertStringStartsWith('multipart/form-data', $body->getString('headers/Content-Type'));
         $this->assertEquals('236', $body->getVal('headers/Content-Length'));
-        $this->assertEquals('100-continue', $body->getVal('headers/Expect'));
+
+        // NOTE (modethirteen, 20201213): this header appears not to be returned from httpbin any longer
+        //$this->assertEquals('100-continue', $body->getVal('headers/Expect'));
         $this->assertEquals(['foo' => 'bar', 'baz' => 'qux'], $body->getVal('form'));
     }
 
