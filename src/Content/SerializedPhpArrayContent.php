@@ -36,12 +36,12 @@ class SerializedPhpArrayContent implements IContent {
     /**
      * @var ContentType|null
      */
-    private ?ContentType $contentType;
+    private $contentType;
 
     /**
      * @var string
      */
-    private string $serialized;
+    private $serialized;
 
     /**
      * @param string $serialized

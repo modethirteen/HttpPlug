@@ -66,7 +66,7 @@ class getQueryParams_Test extends PlugTestCase {
 
         // assert
         foreach($params as $param => $value) {
-            $this->assertIsString($param);
+            $this->assertInternalType('string', $param);
         }
     }
 }

@@ -29,7 +29,7 @@ class ResultParserException extends Exception {
     /**
      * @var Result
      */
-    private Result $result;
+    private $result;
 
     /**
      * @param Result $result

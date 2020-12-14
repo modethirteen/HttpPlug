@@ -30,7 +30,7 @@ abstract class ResultParserBase {
     /**
      * @var int|null
      */
-    protected ?int $maxContentLength = null;
+    protected $maxContentLength = null;
 
     /**
      * @param Result $result

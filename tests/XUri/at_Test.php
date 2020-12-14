@@ -29,7 +29,7 @@ class at_Test extends PlugTestCase {
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
         $object = new class {
-            public function __toString() {
+            public function __toString() : string {
                 return 'xyz';
             }
         };

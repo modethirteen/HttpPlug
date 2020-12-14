@@ -118,6 +118,6 @@ class addHeader_Test extends PlugTestCase {
         $this->assertArrayHasKeyValue('Qux', ['-10'], $headers->toArray());
         $this->assertArrayHasKeyValue('Bazz', ['zzz'], $headers->toArray());
         $this->assertArrayHasKeyValue('Fredd', ['card', 'qux', 'true', '-10', '5'], $headers->toArray());
-        $this->assertArrayHasKeyValue('Barr', 'bazzzzz', $headers->toArray());
+        $this->assertArrayHasKeyValue('Barr', ['bazzzzz'], $headers->toArray());
     }
 }

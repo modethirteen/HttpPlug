@@ -30,29 +30,29 @@ class MockPlug {
     /**
      * @var bool
      */
-    public static bool $isRegistered = false;
+    public static $isRegistered = false;
 
     /**
      * @var Mock[]
      */
-    private static array $mocks = [];
+    private static $mocks = [];
 
     /**
      * @var array<string, MockRequestMatcher>
      * @structure [ [id] => MockRequestMatcher, ... ]
      */
-    private static array $calls = [];
+    private static $calls = [];
 
     /**
      * @var int
      */
-    private static int $callCount = 0;
+    private static $callCount = 0;
 
     /**
      * @var string[]
      * @structure [ id, ... ]
      */
-    private static array $matches = [];
+    private static $matches = [];
 
     /**
      * Assert that call to URI has been made

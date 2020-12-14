@@ -68,17 +68,17 @@ class ContentType {
     /**
      * @var string
      */
-    private string $mainType;
+    private $mainType;
 
     /**
      * @var string[]
      */
-    private array $parameters = [];
+    private $parameters = [];
 
     /**
      * @var string
      */
-    private string $subType;
+    private $subType;
 
     /**
      * @param string $mainType - main part of content-type header line (ex: application)

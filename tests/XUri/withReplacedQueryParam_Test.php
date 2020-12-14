@@ -24,7 +24,7 @@ class withReplacedQueryParam_Test extends PlugTestCase {
     /**
      * @return array
      */
-    public static function param_expected_Provider() {
+    public static function param_expected_Provider() : array {
         return [
             ['bar', 'http://user:password@test.mindtouch.dev/?a=bar&c=d#fragment'],
             [true, 'http://user:password@test.mindtouch.dev/?a=true&c=d#fragment'],

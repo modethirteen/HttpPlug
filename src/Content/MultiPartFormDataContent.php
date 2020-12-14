@@ -27,17 +27,17 @@ class MultiPartFormDataContent implements IContent {
     /**
      * @var ContentType|null
      */
-    private ?ContentType $contentType;
+    private $contentType;
 
     /**
      * @var string[]
      */
-    private array $data;
+    private $data;
 
     /**
      * @var FileContent[]
      */
-    private array $files = [];
+    private $files = [];
 
     /**
      * @param string[] $data - name/value pairs of form data

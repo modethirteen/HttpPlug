@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace modethirteen\Http\Tests\HyperPlug\CurlInvoke;
+namespace modethirteen\Http\Tests\Plug\CurlInvoke;
 
 use modethirteen\Http\Content\ContentType;
 use modethirteen\Http\Content\TextContent;

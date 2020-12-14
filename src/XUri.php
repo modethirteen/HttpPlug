@@ -119,7 +119,7 @@ class XUri {
      *
      * @var array<string, string>
      */
-    private array $data;
+    private $data;
 
     final private function __construct() {}
 

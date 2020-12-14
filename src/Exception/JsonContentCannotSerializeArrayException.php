@@ -28,7 +28,7 @@ class JsonContentCannotSerializeArrayException extends Exception {
     /**
      * @var array
      */
-    private array $array;
+    private $array;
 
     /**
      * @param array $array

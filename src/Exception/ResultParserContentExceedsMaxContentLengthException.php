@@ -28,12 +28,12 @@ class ResultParserContentExceedsMaxContentLengthException extends ResultParserEx
     /**
      * @var int
      */
-    private int $resultContentLength;
+    private $resultContentLength;
 
     /**
      * @var int
      */
-    private int $maxContentLength;
+    private $maxContentLength;
 
     /**
      * @param Result $result

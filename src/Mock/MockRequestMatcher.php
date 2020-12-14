@@ -35,12 +35,12 @@ class MockRequestMatcher {
     /**
      * @var string[]
      */
-    private static array $ignoredQueryParamNames = [];
+    private static $ignoredQueryParamNames = [];
 
     /**
      * @var string[]
      */
-    private static array $ignoredHeaderNames = [];
+    private static $ignoredHeaderNames = [];
 
     /**
      * Set query param names to ignore during matching
@@ -65,22 +65,22 @@ class MockRequestMatcher {
     /**
      * @var string
      */
-    private string $method;
+    private $method;
 
     /**
      * @var XUri
      */
-    private XUri $uri;
+    private $uri;
 
     /**
      * @var IMutableHeaders
      */
-    private IMutableHeaders $headers;
+    private $headers;
 
     /**
      * @var string|null
      */
-    private ?string $body = null;
+    private $body = null;
 
     /**
      * @param string $method

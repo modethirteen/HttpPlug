@@ -44,47 +44,47 @@ class Plug {
     /**
      * @var int
      */
-    protected int $maxAutoRedirects = self::DEFAULT_MAX_AUTO_REDIRECTS;
+    protected $maxAutoRedirects = self::DEFAULT_MAX_AUTO_REDIRECTS;
 
     /**
      * @var Closure[]
      */
-    protected array $preInvokeRequestCallbacks = [];
+    protected $preInvokeRequestCallbacks = [];
 
     /**
      * @var Closure[]
      */
-    protected array $postInvokeCallbacks = [];
+    protected $postInvokeCallbacks = [];
 
     /**
      * @var IResultParser[]
      */
-    protected array $parsers = [];
+    protected $parsers = [];
 
     /**
      * @var string|null - username for basic auth credentials
      */
-    protected ?string $user = null;
+    protected $user = null;
 
     /**
      * @var string|null - password for basic auth credentials
      */
-    protected ?string $password = null;
+    protected $password = null;
 
     /**
      * @var IMutableHeaders - stores the headers for the request
      */
-    protected IMutableHeaders $headers;
+    protected $headers;
 
     /**
      * @var int $timeout - sets the request timeout length (s)
      */
-    protected int $timeout = 300;
+    protected $timeout = 300;
 
     /**
      * @var XUri
      */
-    protected XUri $uri;
+    protected $uri;
 
     /**
      * @param XUri $uri - target uri

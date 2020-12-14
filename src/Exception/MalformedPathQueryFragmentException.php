@@ -28,7 +28,7 @@ class MalformedPathQueryFragmentException extends Exception {
     /**
      * @var string
      */
-    private string $string;
+    private $string;
 
     /**
      * @param string $string - malformed URI path/query/fragment string

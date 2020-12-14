@@ -43,12 +43,12 @@ class JsonContent implements IContent {
     /**
      * @var ContentType|null
      */
-    private ?ContentType $contentType;
+    private $contentType;
 
     /**
      * @var string
      */
-    private string $json;
+    private $json;
 
     /**
      * @param string $json

@@ -56,7 +56,7 @@ class QueryParams implements IMutableQueryParams {
     /**
      * @var string[]
      */
-    private array $params = [];
+    private $params = [];
 
     /**
      * @var mixed - current key
@@ -66,7 +66,7 @@ class QueryParams implements IMutableQueryParams {
     /**
      * @var array<mixed> - list of keys in the map
      */
-    private array $keys = [];
+    private $keys = [];
 
     public function __toString() : string {
         return $this->toString();

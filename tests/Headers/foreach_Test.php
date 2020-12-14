@@ -40,8 +40,8 @@ class foreach_Test extends PlugTestCase {
 
         // assert
         $this->assertCount(3, $results);
-        $this->assertArrayHasKeyValue('X-Foo-Baz', 'bar', $results);
-        $this->assertArrayHasKeyValue('X-Bar-Qux', 'baz', $results);
-        $this->assertArrayHasKeyValue('Content-Length', '0', $results);
+        $this->assertArrayHasKeyValue('X-Foo-Baz', ['bar'], $results);
+        $this->assertArrayHasKeyValue('X-Bar-Qux', ['baz'], $results);
+        $this->assertArrayHasKeyValue('Content-Length', ['0'], $results);
     }
 }

@@ -1,0 +1,42 @@
+name: build
+
+on:
+  push:
+    branches: [ main, php72 ]
+  pull_request:
+    branches: [ main, php72 ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: [7.2, 7.3]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Validate dependencies
+        run: composer validate
+
+      - name: Get dependency cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.json') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Run static analysis
+        run: vendor/bin/phpstan analyse
+
+      - name: Run test suite
+        run: vendor/bin/phpunit --configuration phpunit.xml.dist --coverage-clover=coverage.xml
+
+      - uses: codecov/codecov-action@v1

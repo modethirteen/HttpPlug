@@ -24,7 +24,7 @@ class with_Test extends PlugTestCase {
     /**
      * @return array
      */
-    public static function param_expected_Provider() {
+    public static function param_expected_Provider() : array {
         return [
             ['bar', 'http://user:password@test.mindtouch.dev/?a=b&c=d&foo=bar#fragment'],
             [true, 'http://user:password@test.mindtouch.dev/?a=b&c=d&foo=true#fragment'],

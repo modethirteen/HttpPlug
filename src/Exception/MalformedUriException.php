@@ -28,7 +28,7 @@ class MalformedUriException extends Exception {
     /**
      * @var string
      */
-    private string $string;
+    private $string;
 
     /**
      * @param string $string - malformed URI string

@@ -28,12 +28,12 @@ class FileContent implements IContent {
     /**
      * @var string
      */
-    private string $filePath;
+    private $filePath;
 
     /**
      * @var ContentType|null
      */
-    private ?ContentType $contentType;
+    private $contentType;
 
     /**
      * @param string $filePath

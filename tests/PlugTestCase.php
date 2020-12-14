@@ -19,7 +19,6 @@ namespace modethirteen\Http\Tests;
 use modethirteen\Http\Content\JsonContent;
 use modethirteen\Http\Content\TextContent;
 use modethirteen\Http\Content\XmlContent;
-use modethirteen\Http\Exception\PlugUriHostRequiredException;
 use modethirteen\Http\Headers;
 use modethirteen\Http\Plug;
 use modethirteen\Http\Mock\MockPlug;
@@ -68,7 +67,7 @@ class PlugTestCase extends TestCase {
      */
     protected function newMock(string $class) : MockObject {
         return $this->getMockBuilder($class)
-            ->addMethods(get_class_methods($class))
+            ->setMethods(get_class_methods($class))
             ->disableOriginalConstructor()
             ->getMock();
     }
@@ -86,7 +85,6 @@ class PlugTestCase extends TestCase {
      * Return a new HyperPlug instance configured for httpbin.org
      *
      * @return Plug
-     * @throws PlugUriHostRequiredException
      */
     protected function newHttpBinPlug() : Plug {
         $text = getenv('HTTPBIN_BASEURI');
