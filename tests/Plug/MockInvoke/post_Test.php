@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace modethirteen\Http\Tests\HyperPlug\MockInvoke;
+namespace modethirteen\Http\Tests\Plug\MockInvoke;
 
 use modethirteen\Http\Content\IContent;
 use modethirteen\Http\Headers;

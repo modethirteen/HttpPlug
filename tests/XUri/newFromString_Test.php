@@ -69,6 +69,7 @@ class newFromString_Test extends PlugTestCase {
     /**
      * @test
      * @expectedException \modethirteen\Http\Exception\MalformedUriException
+     * @noinspection PhpFullyQualifiedNameUsageInspection
      */
     public function Invalid_uri_throws_exception() {
 
@@ -82,6 +83,7 @@ class newFromString_Test extends PlugTestCase {
     /**
      * @test
      * @expectedException \modethirteen\Http\Exception\MalformedUriException
+     * @noinspection PhpFullyQualifiedNameUsageInspection
      */
     public function Valid_uri_must_have_scheme() {
 
@@ -95,6 +97,7 @@ class newFromString_Test extends PlugTestCase {
     /**
      * @test
      * @expectedException \modethirteen\Http\Exception\MalformedUriException
+     * @noinspection PhpFullyQualifiedNameUsageInspection
      */
     public function Valid_uri_must_have_valid_port() {
 

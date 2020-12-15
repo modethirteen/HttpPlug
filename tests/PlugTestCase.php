@@ -20,10 +20,10 @@ use modethirteen\Http\Content\JsonContent;
 use modethirteen\Http\Content\TextContent;
 use modethirteen\Http\Content\XmlContent;
 use modethirteen\Http\Headers;
-use modethirteen\Http\Plug;
 use modethirteen\Http\Mock\MockPlug;
 use modethirteen\Http\Mock\MockRequestMatcher;
 use modethirteen\Http\Parser\JsonParser;
+use modethirteen\Http\Plug;
 use modethirteen\Http\StringUtil;
 use modethirteen\Http\XUri;
 use modethirteen\XArray\XArray;
@@ -86,6 +86,7 @@ class PlugTestCase extends TestCase {
      *
      * @return Plug
      * @throws \modethirteen\Http\Exception\PlugUriHostRequiredException
+     * @noinspection PhpFullyQualifiedNameUsageInspection
      */
     protected function newHttpBinPlug() : Plug {
         $baseuri = getenv('HTTPBIN_BASEURI');

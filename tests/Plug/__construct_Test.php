@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace modethirteen\Http\Tests\HyperPlug;
+namespace modethirteen\Http\Tests\Plug;
 
 use modethirteen\Http\Plug;
 use modethirteen\Http\Tests\PlugTestCase;
@@ -25,6 +25,7 @@ class __construct_Test extends PlugTestCase {
     /**
      * @test
      * @expectedException \modethirteen\Http\Exception\PlugUriHostRequiredException
+     * @noinspection PhpFullyQualifiedNameUsageInspection
      */
     public function Cannot_construct_plug_with_empty_host() {
 

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace modethirteen\Http\Tests\Headers;
+namespace modethirteen\Http\Tests\QueryParams;
 
 use modethirteen\Http\QueryParams;
 use modethirteen\Http\Tests\PlugTestCase;
