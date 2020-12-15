@@ -49,8 +49,13 @@ class FileContent implements IContent {
         }
         if($contentType !== null && $contentType->isStream()) {
             $finfo = finfo_open(FILEINFO_MIME);
-            $contentType = ContentType::newFromString(finfo_file($finfo, $filePath));
-            finfo_close($finfo);
+            if($finfo !== false) {
+                $text = finfo_file($finfo, $filePath);
+                if($text !== false) {
+                    $contentType = ContentType::newFromString($text);
+                }
+                finfo_close($finfo);
+            }
         }
         $this->contentType = $contentType;
     }

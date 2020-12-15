@@ -1,0 +1,25 @@
+parameters:
+    bootstrapFiles:
+        - %currentWorkingDirectory%/_bootstrap.php
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+    ignoreErrors:
+        - message: '#::key\(\) has no return typehint specified#'
+          path: %currentWorkingDirectory%/src/Headers.php
+        - message: '#::current\(\) has no return typehint specified#'
+          path: %currentWorkingDirectory%/src/Headers.php
+        - message: '#array_filter expects callable\(mixed, mixed\)#'
+          path: %currentWorkingDirectory%/src/Headers.php
+        - message: '#Unsafe usage of new static#'
+          path: %currentWorkingDirectory%/src/Content/ContentType.php
+        - message: '#Unsafe usage of new static#'
+          path: %currentWorkingDirectory%/src/Content/JsonContent.php
+        - message: '#Unsafe usage of new static#'
+          path: %currentWorkingDirectory%/src/Content/SerializedPhpArrayContent.php
+        - message: '#Unsafe usage of new static#'
+          path: %currentWorkingDirectory%/src/Content/XmlContent.php
+        - message: '#Unsafe usage of new static#'
+          path: %currentWorkingDirectory%/src/XUri.php
+    level: 7
+    paths:
+        - src
