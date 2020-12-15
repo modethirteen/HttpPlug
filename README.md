@@ -2,12 +2,13 @@
 
 A PHP library for plugging into HTTP sockets.
 
-[![travis-ci.org](https://travis-ci.org/modethirteen/HyperPlug.svg?branch=main)](https://travis-ci.org/modethirteen/HyperPlug)
+[![github.com](https://github.com/modethirteen/HyperPlug/workflows/build/badge.svg)](https://github.com/modethirteen/HyperPlug/actions?query=workflow%3Abuild)
 [![codecov.io](https://codecov.io/github/modethirteen/HyperPlug/coverage.svg?branch=main)](https://codecov.io/github/modethirteen/HyperPlug?branch=main)
 [![Latest Stable Version](https://poser.pugx.org/modethirteen/hyperplug/version.svg)](https://packagist.org/packages/modethirteen/hyperplug)
 [![Latest Unstable Version](https://poser.pugx.org/modethirteen/hyperplug/v/unstable)](https://packagist.org/packages/modethirteen/hyperplug)
 
-* PHP 7.2, 7.3 (master, 1.x)
+* PHP 7.2+ (1.x)
+* PHP 7.4+ (main)
 
 ## Installation
 
@@ -24,12 +25,12 @@ Or add modethirteen/hyperplug to your project's composer.json:
 ```json
 {
     "require": {
-        "modethirteen/hyperplug": "dev-master"
+        "modethirteen/hyperplug": "dev-main"
     }
 }
 ```
 
-`dev-master` is the master development branch. If you are using this library in a production environment, it is advised that you use a stable release.
+`dev-main` is the main development branch. If you are using this library in a production environment, it is advised that you use a stable release.
 
 Assuming you have setup Composer's autoloader, the library can be found in the `modethirteen\Http\` namespace.
 
@@ -39,7 +40,7 @@ A quick example:
 
 ```php
 $plug = new Plug(XUri::newFromString('https://api.example.com/v2'))
-    ->withResultParser((new JsonParser())
+    ->withResultParser(new JsonParser());
 $result = $plug->at('users', 'bob')
     ->get();
 if($result->isSuccess()) {
@@ -58,18 +59,18 @@ $uri = XUri::newFromString('http://api.example.com/v3')
     // every step in a URL builder returns an immutable XUri object
     ->withScheme('https')
     ->at('widgets')
-    ->withQueryParam('xyzzy', 'plugh');
+    ->withQueryParam('xyzzy', 'plugh')
     ->withQueryParams(QueryParams::newFromArray([
         'bar' => 'qux',
         'baz' => 'fred'
     ]))
-    ->withoutQueryParam('bar')
+    ->withoutQueryParam('bar');
 
 // QueryParams objects are normally immutable
 $params = $uri->getQueryParams();
 
 // we can change the data structure of a QueryParams object if we must
-$params = $params->toMutableQueryParams()
+$params = $params->toMutableQueryParams();
 $params->set('baz', 'abc');
 
 // QueryParams are also iterable
@@ -101,19 +102,19 @@ $plug = $plug->withAutoRedirects(2);
 // HTTP requests often need HTTP headers
 $plug = $plug->withHeader('X-FcStPauli', 'hells')
     ->withAddedHeader('X-FcStPauli', 'bells')
-    ->withHeader('X-HSV', 'you\'ll never walk again')
+    ->withHeader('X-HSV', 'you\'ll never walk again');
 
 // ...or not
 $plug = $plug->withoutHeader('X-HSV');
 
 // the Headers object, like XUri and QueryParams, is normally immutable
 $headers = $plug->getHeaders();
-$result = $headers->getHeader('X-FcStPauli') // ['hells', 'bells']
-$result = $headers->getHeaderLine('X-FcStPauli') // X-HSV: hells, bells
+$result = $headers->getHeader('X-FcStPauli'); // ['hells', 'bells']
+$result = $headers->getHeaderLine('X-FcStPauli'); // X-HSV: hells, bells
 
 // but if you really want to...
 $mutableHeaders = $headers->toMutableHeaders();
-$mutableHeaders->set('X-HSV', 'keiner mag den hsv')
+$mutableHeaders->set('X-HSV', 'keiner mag den hsv');
 
 // a Headers object is iterable
 foreach($mutableHeaders as $header => $values) {
@@ -179,7 +180,7 @@ $result = $plug->put(new FileContent('/path/to/file'));
 $result = $plug->post(new UrlEncodedFormDataContent([
     'e' => 'f',
     'g' => 'h'
-]);
+]));
 $result = $plug->post(JsonContent::newFromArray([
     'a' => [
         'multi-dimensional' => [
@@ -219,7 +220,7 @@ composer install
 docker-compose up -d
 
 # run static analysis checks
-vendor/bin/phpstan analyse --level 7 src
+vendor/bin/phpstan analyse
 
 # run tests
 vendor/bin/phpunit --configuration phpunit.xml.dist
