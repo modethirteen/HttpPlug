@@ -114,8 +114,6 @@ class PlugTestCase extends TestCase {
      * @param array $array
      */
     protected function assertArrayHasKeyValue(string $key, $expected, array $array) {
-        $X = new XArray($array);
-        $isExpectingNumericArray = is_array($expected) && key_exists(0, $expected);
-        $this->assertEquals($expected, $isExpectingNumericArray ? $X->getAll($key) : $X->getVal($key));
+        $this->assertEquals($expected, (new XArray($array))->getVal($key));
     }
 }

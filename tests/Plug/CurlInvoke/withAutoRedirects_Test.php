@@ -38,7 +38,7 @@ class withAutoRedirects_Test extends PlugTestCase {
         $uri = $plug->getUri();
         $this->assertEquals($uri->toString(), $result->getVal('request/uri'));
         $this->assertEquals($uri->toBaseUri()->at('get')->toString(), $result->getBody()->getVal('url'));
-        $headers = $result->getAll('rawheaders');
+        $headers = $result->getVal('rawheaders');
         $this->assertContains('HTTP/1.1 302 FOUND', $headers);
         $this->assertContains('Location: /get', $headers);
     }
