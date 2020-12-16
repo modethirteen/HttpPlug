@@ -16,6 +16,7 @@
  */
 namespace modethirteen\Http\Content;
 
+use modethirteen\XArray\Serialization\XmlSerializer;
 use modethirteen\XArray\XArray;
 
 /**
@@ -32,7 +33,7 @@ class XmlContent implements IContent {
      * @return static
      */
     public static function newFromArray(array $xml) : object {
-        return new static((new XArray($xml))->toXml());
+        return new static((new XArray($xml))->withSerializer(new XmlSerializer())->toString());
     }
 
     /**

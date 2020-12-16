@@ -16,6 +16,7 @@
   "require": {
     "php": ">=7.4.12",
     "modethirteen/xarray": "dev-main",
+    "modethirteen/type-ex": "dev-main",
     "ext-fileinfo": "*",
     "ext-json": "*",
     "ext-curl": "*"

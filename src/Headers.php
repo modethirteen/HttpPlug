@@ -202,6 +202,7 @@ class Headers implements IMutableHeaders {
         return $this->name;
     }
 
+    /** @noinspection PhpMissingReturnTypeInspection */
     public function current() {
         return $this->headers[$this->name];
     }
@@ -210,6 +211,7 @@ class Headers implements IMutableHeaders {
         $this->name = next($this->names);
     }
 
+    /** @noinspection PhpMissingReturnTypeInspection */
     public function valid() {
         return $this->name !== false;
     }

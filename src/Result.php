@@ -18,6 +18,7 @@ namespace modethirteen\Http;
 
 use modethirteen\Http\Content\ContentType;
 use modethirteen\Http\Content\IContent;
+use modethirteen\XArray\Serialization\XmlSerializer;
 use modethirteen\XArray\XArray;
 
 /**
@@ -161,12 +162,14 @@ class Result extends XArray {
      * @return string
      */
     public function getXml(string $key = null) : string {
+        $serializer = new XmlSerializer();
         if(!is_string($key)) {
-            return "<result>{$this->toXml()}</result>";
+
+            /** @noinspection HtmlUnknownTag */
+            return "<result>{$this->withSerializer($serializer)->toString()}</result>";
         }
         $value = $this->getVal($key);
-        $XArray = new XArray($value);
-        return $XArray->toXml();
+        return (new XArray($value))->withSerializer($serializer)->toString();
     }
 
     /**
