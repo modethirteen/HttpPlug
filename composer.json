@@ -14,7 +14,7 @@
     "issues": "https://github.com/modethirteen/hyperplug/issues"
   },
   "require": {
-    "php": ">=7.4.12",
+    "php": "~7.4.12",
     "modethirteen/xarray": "dev-main",
     "modethirteen/type-ex": "dev-main",
     "ext-fileinfo": "*",
