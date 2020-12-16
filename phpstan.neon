@@ -8,7 +8,7 @@ parameters:
           path: %currentWorkingDirectory%/src/Headers.php
         - message: '#::current\(\) has no return typehint specified#'
           path: %currentWorkingDirectory%/src/Headers.php
-        - message: '#array_filter expects callable\(mixed, mixed\)#'
+        - message: '#array_filter expects#'
           path: %currentWorkingDirectory%/src/Headers.php
     level: 7
     paths:
