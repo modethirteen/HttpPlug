@@ -2,7 +2,7 @@
 
 A PHP library for plugging into HTTP sockets.
 
-[![travis-ci.com](https://travis-ci.com/modethirteen/HyperPlug.svg?branch=main)](https://travis-ci.com/modethirteen/HyperPlug)
+[![github.com](https://github.com/modethirteen/HyperPlug/workflows/build/badge.svg)](https://github.com/modethirteen/HyperPlug/actions?query=workflow%3Abuild)
 [![codecov.io](https://codecov.io/github/modethirteen/HyperPlug/coverage.svg?branch=main)](https://codecov.io/github/modethirteen/HyperPlug?branch=main)
 [![Latest Stable Version](https://poser.pugx.org/modethirteen/hyperplug/version.svg)](https://packagist.org/packages/modethirteen/hyperplug)
 [![Latest Unstable Version](https://poser.pugx.org/modethirteen/hyperplug/v/unstable)](https://packagist.org/packages/modethirteen/hyperplug)
