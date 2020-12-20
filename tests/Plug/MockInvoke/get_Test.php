@@ -35,7 +35,7 @@ class get_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_unserialize_json_when_max_content_length_is_not_reached() {
+    public function Can_unserialize_json_when_max_content_length_is_not_reached() : void {
 
         // arrange
         $uri = XUri::tryParse('test://example.com/foo');
@@ -64,7 +64,7 @@ class get_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_unserialize_json_with_custom_media_type_when_max_content_length_is_not_reached() {
+    public function Can_unserialize_json_with_custom_media_type_when_max_content_length_is_not_reached() : void {
 
         // arrange
         $uri = XUri::tryParse('test://example.com/foo');
@@ -93,7 +93,7 @@ class get_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Will_throw_if_cannot_unserialize_json() {
+    public function Will_throw_if_cannot_unserialize_json() : void {
 
         // arrange
         $uri = XUri::tryParse('test://example.com/foo');
@@ -130,7 +130,7 @@ class get_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_unserialize_php_when_max_content_length_is_not_reached() {
+    public function Can_unserialize_php_when_max_content_length_is_not_reached() : void {
 
         // arrange
         $uri = XUri::tryParse('test://example.com/foo');
@@ -159,7 +159,7 @@ class get_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Will_throw_if_cannot_unserialize_php() {
+    public function Will_throw_if_cannot_unserialize_php() : void {
 
         // arrange
         $uri = XUri::tryParse('test://example.com/foo');
@@ -196,7 +196,7 @@ class get_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_unserialize_empty_php_body() {
+    public function Can_unserialize_empty_php_body() : void {
 
         // arrange
         $uri = XUri::tryParse('test://example.com/foo');

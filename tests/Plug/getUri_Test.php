@@ -25,7 +25,7 @@ class getUri_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_get_uri_with_credentials() {
+    public function Can_get_uri_with_credentials() : void {
 
         // arrange
         $plug = (new Plug(XUri::tryParse('http://foo.com/bar/baz?a=b&c=d')))
@@ -41,7 +41,7 @@ class getUri_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_get_uri_with_username_credential() {
+    public function Can_get_uri_with_username_credential() : void {
 
         // arrange
         $plug = (new Plug(XUri::tryParse('http://foo.com/bar/baz?a=b&c=d')))
@@ -57,7 +57,7 @@ class getUri_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_get_uri_without_credentials() {
+    public function Can_get_uri_without_credentials() : void {
 
         // arrange
         $plug = (new Plug(XUri::tryParse('http://foo.com/bar/baz?a=b&c=d')))

@@ -24,7 +24,7 @@ class withoutQuery_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_add_query_parameter() {
+    public function Can_add_query_parameter() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -39,7 +39,7 @@ class withoutQuery_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_add_query_after_removing_it() {
+    public function Can_add_query_after_removing_it() : void {
         $xuri = XUri::tryParse('http://test.mindtouch.dev/?mt-f1=true');
         $result = $xuri->withoutQuery()->withQueryParam('mt-f1', 'true');
         $this->assertEquals('http://test.mindtouch.dev/?mt-f1=true', $result->toString());
@@ -48,7 +48,7 @@ class withoutQuery_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_extended_instance() {
+    public function Can_return_extended_instance() : void {
 
         // act
         $result = TestXUri::tryParse('http://user:password@test.mindtouch.dev:80/somepath?a=b&c=d&e=f#foo')->withoutQuery();

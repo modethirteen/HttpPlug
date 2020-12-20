@@ -36,8 +36,8 @@ class withReplacedQueryParam_Test extends PlugTestCase {
                     return 'fred';
                 }
             }, 'http://user:password@test.mindtouch.dev/?a=fred&c=d#fragment'],
-            [['qux', true, -10, 5], 'http://user:password@test.mindtouch.dev/?a=qux%2C1%2C-10%2C5&c=d#fragment'],
-            [function() { return 'bazz'; }, 'http://user:password@test.mindtouch.dev/?a=bazz&c=d#fragment']
+            [['qux', true, -10, 5], 'http://user:password@test.mindtouch.dev/?a=qux%2Ctrue%2C-10%2C5&c=d#fragment'],
+            [function() : string { return 'bazz'; }, 'http://user:password@test.mindtouch.dev/?a=bazz&c=d#fragment']
         ];
     }
 
@@ -62,7 +62,7 @@ class withReplacedQueryParam_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_replace_query_parameter_if_no_query_parameters_exist() {
+    public function Can_replace_query_parameter_if_no_query_parameters_exist() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/#fragment';
@@ -78,7 +78,7 @@ class withReplacedQueryParam_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_remove_query_parameter() {
+    public function Can_remove_query_parameter() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -93,7 +93,7 @@ class withReplacedQueryParam_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Will_do_nothing_when_query_parameter_not_set() {
+    public function Will_do_nothing_when_query_parameter_not_set() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -108,7 +108,7 @@ class withReplacedQueryParam_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_extended_instance() {
+    public function Can_return_extended_instance() : void {
 
         // act
         $result = TestXUri::tryParse('http://user:password@test.mindtouch.dev:80/somepath?a=b&c=d&e=f#foo')->withReplacedQueryParam('a', 'qux');

@@ -31,7 +31,7 @@ class post_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_invoke_post() {
+    public function Can_invoke_post() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('anything');
@@ -47,7 +47,7 @@ class post_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_invoke_post_with_text_contet() {
+    public function Can_invoke_post_with_text_contet() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('anything');
@@ -66,7 +66,7 @@ class post_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_invoke_post_with_empty_content() {
+    public function Can_invoke_post_with_empty_content() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('anything');
@@ -85,7 +85,7 @@ class post_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_invoke_post_with_file_content() {
+    public function Can_invoke_post_with_file_content() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('anything');
@@ -109,7 +109,7 @@ TEXT
     /**
      * @test
      */
-    public function Can_invoke_post_with_urlencoded_form_data_content() {
+    public function Can_invoke_post_with_urlencoded_form_data_content() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('anything');
@@ -131,7 +131,7 @@ TEXT
     /**
      * @test
      */
-    public function Can_invoke_post_with_multipart_form_data_content() {
+    public function Can_invoke_post_with_multipart_form_data_content() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('anything');
@@ -156,7 +156,7 @@ TEXT
     /**
      * @test
      */
-    public function Can_invoke_post_with_multipart_form_data_content_with_file_content() {
+    public function Can_invoke_post_with_multipart_form_data_content_with_file_content() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('anything');
@@ -186,7 +186,7 @@ TEXT
     /**
      * @test
      */
-    public function Can_invoke_post_with_json_content() {
+    public function Can_invoke_post_with_json_content() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('anything');
@@ -212,7 +212,7 @@ TEXT
     /**
      * @test
      */
-    public function Can_invoke_post_with_xml_content() {
+    public function Can_invoke_post_with_xml_content() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('anything');

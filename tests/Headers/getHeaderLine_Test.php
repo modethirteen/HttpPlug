@@ -24,7 +24,7 @@ class getHeaderLine_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_header_line_by_case_insensitive_name() {
+    public function Can_get_header_line_by_case_insensitive_name() : void {
 
         // arrange
         $headers = new Headers();
@@ -40,7 +40,7 @@ class getHeaderLine_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_header_line_with_multiple_values_by_case_insensitive_name() {
+    public function Can_get_header_line_with_multiple_values_by_case_insensitive_name() : void {
 
         // arrange
         $headers = new Headers();
@@ -57,7 +57,7 @@ class getHeaderLine_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_header_line_from_single_value_headers() {
+    public function Can_get_header_line_from_single_value_headers() : void {
 
         // arrange
         $headers = new Headers();

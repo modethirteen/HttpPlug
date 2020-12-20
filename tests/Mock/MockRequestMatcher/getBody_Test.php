@@ -27,7 +27,7 @@ class getBody_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_get_body() {
+    public function Can_get_body() : void {
 
         // arrange
         $matcher = (new MockRequestMatcher(Plug::METHOD_POST, XUri::tryParse('http://example.com/bazz')))

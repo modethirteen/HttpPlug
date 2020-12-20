@@ -24,7 +24,7 @@ class isAbsoluteUrl_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Is_absolute_url() {
+    public function Is_absolute_url() : void {
 
         // act
         $result = XUri::isAbsoluteUrl('https://foo.example.com/baz');
@@ -36,7 +36,7 @@ class isAbsoluteUrl_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Is_not_absolute_url() {
+    public function Is_not_absolute_url() : void {
 
         // act
         $result = XUri::isValidUrl('/baz');

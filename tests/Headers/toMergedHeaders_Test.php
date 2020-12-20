@@ -24,7 +24,7 @@ class toMergedHeaders_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_instance_as_mutable_headers() {
+    public function Can_return_instance_as_mutable_headers() : void {
 
         // arrange
         $headers = new Headers();

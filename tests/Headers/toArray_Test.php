@@ -24,7 +24,7 @@ class toArray_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_array() {
+    public function Can_get_array() : void {
 
         // arrange
         $headers = new Headers();
@@ -54,7 +54,7 @@ class toArray_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_array_with_raw_header_comma_parsing_enabled() {
+    public function Can_get_array_with_raw_header_comma_parsing_enabled() : void {
 
         // arrange
         $headers = (new Headers())

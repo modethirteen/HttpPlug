@@ -27,7 +27,7 @@ class getMethod_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_get_method() {
+    public function Can_get_method() : void {
 
         // arrange
         $matcher = (new MockRequestMatcher(Plug::METHOD_POST, XUri::tryParse('http://example.com/bazz')))

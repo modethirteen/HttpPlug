@@ -24,7 +24,7 @@ class setHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_set_value() {
+    public function Can_set_value() : void {
 
         // arrange
         $headers = new Headers();
@@ -39,7 +39,7 @@ class setHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_replace_values() {
+    public function Can_replace_values() : void {
 
         // arrange
         $headers = new Headers();
@@ -56,7 +56,7 @@ class setHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_set_empty_value() {
+    public function Can_set_empty_value() : void {
 
         // arrange
         $headers = new Headers();
@@ -71,7 +71,7 @@ class setHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_set_non_string_type_header() {
+    public function Can_set_non_string_type_header() : void {
 
         // arrange
         $headers = new Headers();
@@ -87,7 +87,7 @@ class setHeader_Test extends PlugTestCase {
             }
         });
         $headers->setHeader('fredd', ['qux', true, -10, 5]);
-        $headers->setHeader('barr', function() { return 'bazzzzz'; });
+        $headers->setHeader('barr', function() : string { return 'bazzzzz'; });
 
         // assert
         $this->assertArrayHasKeyValue('Bar', ['true'], $headers->toArray());

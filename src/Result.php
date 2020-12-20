@@ -162,6 +162,8 @@ class Result extends XArray {
      */
     public function getXml(string $key = null) : string {
         if(!is_string($key)) {
+
+            /** @noinspection HtmlUnknownTag */
             return "<result>{$this->toXml()}</result>";
         }
         $value = $this->getVal($key);

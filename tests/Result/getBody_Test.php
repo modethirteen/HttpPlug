@@ -24,7 +24,7 @@ class getBody_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_array_body_as_array() {
+    public function Can_get_array_body_as_array() : void {
 
         // arrange
         $data = [
@@ -52,7 +52,7 @@ class getBody_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_string_body_as_array() {
+    public function Can_get_string_body_as_array() : void {
 
         // arrange
         $data = [

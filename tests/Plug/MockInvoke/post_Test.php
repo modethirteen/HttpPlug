@@ -30,7 +30,7 @@ class post_Test extends PlugTestCase  {
      * @note httpbin credentials endpoint does not support put method
      * @test
      */
-    public function Can_invoke_post_with_credentials() {
+    public function Can_invoke_post_with_credentials() : void {
 
         // arrange
         $uri = XUri::tryParse('test://example.com/foo');

@@ -24,7 +24,7 @@ class delete_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_invoke_delete() {
+    public function Can_invoke_delete() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('anything');

@@ -24,7 +24,7 @@ class withoutPort_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_remove_port() {
+    public function Can_remove_port() : void {
 
         // arrange
         $uriStr = 'https://user:password@test.mindtouch.dev:80/?a=b&e=f#fragment';
@@ -39,7 +39,7 @@ class withoutPort_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function No_port_is_noop() {
+    public function No_port_is_noop() : void {
 
         // arrange
         $uriStr = 'https://user:password@test.mindtouch.dev/?a=b&e=f#fragment';
@@ -54,7 +54,7 @@ class withoutPort_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_extended_instance() {
+    public function Can_return_extended_instance() : void {
 
         // act
         $result = TestXUri::tryParse('http://user:password@test.mindtouch.dev:80/somepath?a=b&c=d&e=f#foo')->withoutPort();

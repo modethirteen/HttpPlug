@@ -24,7 +24,7 @@ class toRelativeString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function To_relative_string_perserves_path_query_fragment() {
+    public function To_relative_string_perserves_path_query_fragment() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/somepath?a=b&c=d#fragment';
@@ -39,7 +39,7 @@ class toRelativeString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function To_relative_string_without_fragment() {
+    public function To_relative_string_without_fragment() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/somepath?a=b&c=d';
@@ -54,7 +54,7 @@ class toRelativeString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function To_relative_string_without_query() {
+    public function To_relative_string_without_query() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/somepath';
@@ -69,7 +69,7 @@ class toRelativeString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function To_relative_string_without_path() {
+    public function To_relative_string_without_path() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev';

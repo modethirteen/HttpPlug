@@ -26,7 +26,7 @@ class __construct_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Cannot_construct_plug_with_empty_host() {
+    public function Cannot_construct_plug_with_empty_host() : void {
         $this->expectException(PlugUriHostRequiredException::class);
 
         // act

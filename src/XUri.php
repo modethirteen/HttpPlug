@@ -19,6 +19,7 @@ namespace modethirteen\Http;
 use InvalidArgumentException;
 use modethirteen\Http\Exception\MalformedPathQueryFragmentException;
 use modethirteen\Http\Exception\MalformedUriException;
+use modethirteen\TypeEx\StringEx;
 
 /**
  * Class XUri
@@ -276,7 +277,7 @@ class XUri {
      * @throws InvalidArgumentException
      */
     public function withHost(string $host) : object {
-        if(StringUtil::isNullOrEmpty($host)) {
+        if(StringEx::isNullOrEmpty($host)) {
             throw new InvalidArgumentException('Host value must be non-empty string');
         }
         $data = $this->data;
@@ -318,7 +319,7 @@ class XUri {
      * @throws InvalidArgumentException
      */
     public function withScheme(string $scheme) : object {
-        if(StringUtil::isNullOrEmpty($scheme)) {
+        if(StringEx::isNullOrEmpty($scheme)) {
             throw new InvalidArgumentException('Scheme value must non-empty string');
         }
         $data = $this->data;
@@ -361,7 +362,7 @@ class XUri {
      * @throws InvalidArgumentException
      */
     public function withQuery(string $query) : object {
-        if(StringUtil::startsWith($query, '?')) {
+        if((new StringEx($query))->startsWith('?')) {
             throw new InvalidArgumentException('Query value must not start with \'?\' character');
         }
         $data = $this->data;
@@ -451,7 +452,7 @@ class XUri {
             // key not found, nothing to do
             return $this;
         }
-        $params->set($param, StringUtil::stringify($value));
+        $params->set($param, StringEx::stringify($value));
         $data['query'] = $params->toString();
         return static::newFromUriData($data);
     }
@@ -513,7 +514,7 @@ class XUri {
         $data = $this->data;
         $path = $this->getInternalPath($data);
         foreach($segments as $segment) {
-            $path .= $this->normalize(StringUtil::stringify($segment));
+            $path .= $this->normalize(StringEx::stringify($segment));
         }
         $data['path'] = $path;
         return static::newFromUriData($data);
@@ -534,7 +535,7 @@ class XUri {
         $data = $this->data;
         if(isset($newUriData['path'])) {
             $path = $this->getInternalPath($data);
-            $data['path'] = !StringUtil::isNullOrEmpty($path) ? $path . $this->normalize($newUriData['path']) : $this->normalize($newUriData['path']);
+            $data['path'] = !StringEx::isNullOrEmpty($path) ? $path . $this->normalize($newUriData['path']) : $this->normalize($newUriData['path']);
         }
         if(isset($newUriData['query'])) {
             if(isset($data['query'])) {
@@ -562,7 +563,7 @@ class XUri {
      */
     public function toBaseUri() : object {
         $scheme = $this->getScheme();
-        $result = StringUtil::isNullOrEmpty($scheme) ? 'http://' : $scheme . '://';
+        $result = StringEx::isNullOrEmpty($scheme) ? 'http://' : $scheme . '://';
         $result .= $this->getAuthority();
         return self::newFromString($result);
     }
@@ -597,13 +598,13 @@ class XUri {
      */
     public function toString() : string {
         $scheme = $this->getScheme();
-        $result = StringUtil::isNullOrEmpty($scheme) ? 'http://' : $scheme . '://';
+        $result = StringEx::isNullOrEmpty($scheme) ? 'http://' : $scheme . '://';
         $result .= $this->getAuthority();
         $result .= $this->getPath();
         $query = $this->getQuery();
-        $result .= StringUtil::isNullOrEmpty($query) ? '' : ('?' . $query);
+        $result .= StringEx::isNullOrEmpty($query) ? '' : ('?' . $query);
         $fragment = $this->getFragment();
-        $result .= StringUtil::isNullOrEmpty($fragment) ? '' : ('#' . $fragment);
+        $result .= StringEx::isNullOrEmpty($fragment) ? '' : ('#' . $fragment);
         return $result;
     }
 
@@ -615,9 +616,9 @@ class XUri {
         $query = $this->getQuery();
         $fragment = $this->getFragment();
         $result = '';
-        $result .= StringUtil::isNullOrEmpty($path) ? '/' : $path;
-        $result .= StringUtil::isNullOrEmpty($query) ? '' : ('?' . $query);
-        $result .= StringUtil::isNullOrEmpty($fragment) ? '' : ('#' . $fragment);
+        $result .= StringEx::isNullOrEmpty($path) ? '/' : $path;
+        $result .= StringEx::isNullOrEmpty($query) ? '' : ('?' . $query);
+        $result .= StringEx::isNullOrEmpty($fragment) ? '' : ('#' . $fragment);
         return $result;
     }
 

@@ -24,8 +24,8 @@ use modethirteen\Http\Plug;
 use modethirteen\Http\Mock\MockPlug;
 use modethirteen\Http\Mock\MockRequestMatcher;
 use modethirteen\Http\Parser\JsonParser;
-use modethirteen\Http\StringUtil;
 use modethirteen\Http\XUri;
+use modethirteen\TypeEx\StringEx;
 use modethirteen\XArray\XArray;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -88,7 +88,7 @@ class PlugTestCase extends TestCase {
      */
     protected function newHttpBinPlug() : Plug {
         $text = getenv('HTTPBIN_BASEURI');
-        if($text === false || StringUtil::isNullOrEmpty($text)) {
+        if($text === false || StringEx::isNullOrEmpty($text)) {
             $text = 'https://httpbin.org';
         }
         $uri = XUri::tryParse($text);
@@ -98,7 +98,7 @@ class PlugTestCase extends TestCase {
     /**
      * Assert that all registered mock plug invocations were called
      */
-    protected function assertAllMockPlugMocksCalled() {
+    protected function assertAllMockPlugMocksCalled() : void {
         if(!MockPlug::verifyAll()) {
             $this->fail('Failed asserting that all MockPlug mocks were called');
         }

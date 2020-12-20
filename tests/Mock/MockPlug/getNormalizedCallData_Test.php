@@ -30,7 +30,7 @@ class getNormalizedCallData_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_get_normalized_call_data() {
+    public function Can_get_normalized_call_data() : void {
 
         // arrange
         $uri1 = XUri::tryParse('test://example.com/@api/deki/pages/=foo');

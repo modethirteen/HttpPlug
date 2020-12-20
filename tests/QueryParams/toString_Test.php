@@ -24,7 +24,7 @@ class toString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_build_query_string() {
+    public function Can_build_query_string() : void {
 
         // arrange
         $params = new QueryParams();

@@ -24,7 +24,7 @@ class withPath_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_replace_path() {
+    public function Can_replace_path() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/foo/bar/baz?a=b&c=d#fragment';
@@ -39,7 +39,7 @@ class withPath_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_replace_path_with_preceding_slash() {
+    public function Can_replace_path_with_preceding_slash() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/foo/bar/baz?a=b&c=d#fragment';
@@ -54,7 +54,7 @@ class withPath_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_replace_path_with_trailing_slash() {
+    public function Can_replace_path_with_trailing_slash() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/foo/bar/baz?a=b&c=d#fragment';
@@ -69,7 +69,7 @@ class withPath_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_extended_instance() {
+    public function Can_return_extended_instance() : void {
 
         // act
         $result = TestXUri::tryParse('http://user:password@test.mindtouch.dev:80/somepath?a=b&c=d&e=f#foo')->withPath('foo');

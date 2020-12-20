@@ -24,7 +24,7 @@ class addHeaders_Test extends PlugTestCase {
        /**
      * @test
      */
-    public function Can_add_headers_collection_to_existing_headers() {
+    public function Can_add_headers_collection_to_existing_headers() : void {
 
         // arrange
         $headers = new Headers();

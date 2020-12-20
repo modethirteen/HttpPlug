@@ -24,7 +24,7 @@ class atPath_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_add_path() {
+    public function Can_add_path() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -39,7 +39,7 @@ class atPath_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_add_query() {
+    public function Can_add_query() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -54,7 +54,7 @@ class atPath_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_add_query_if_no_existing_query() {
+    public function Can_add_query_if_no_existing_query() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/#fragment';
@@ -69,7 +69,7 @@ class atPath_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_replace_fragment() {
+    public function Can_replace_fragment() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -84,7 +84,7 @@ class atPath_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_add_path_with_prepended_slash() {
+    public function Can_add_path_with_prepended_slash() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -99,7 +99,7 @@ class atPath_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_add_path_with_appended_slash() {
+    public function Can_add_path_with_appended_slash() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -114,7 +114,7 @@ class atPath_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_add_path_with_colon() {
+    public function Can_add_path_with_colon() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';

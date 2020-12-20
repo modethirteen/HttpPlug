@@ -24,7 +24,7 @@ class getFragment_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_fragment() {
+    public function Can_get_fragment() : void {
 
         // arrange
         $uriStr = 'ftp://user:password@test.mindtouch.dev/foo/bar?a=b&c=d#fragment';

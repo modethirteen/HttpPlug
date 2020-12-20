@@ -27,7 +27,7 @@ class getUri_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_get_uri() {
+    public function Can_get_uri() : void {
 
         // arrange
         $matcher = (new MockRequestMatcher(Plug::METHOD_POST, XUri::tryParse('http://example.com/bazz')))

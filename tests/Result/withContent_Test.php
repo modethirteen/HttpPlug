@@ -28,7 +28,7 @@ class withContent_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_instance_with_text_content() {
+    public function Can_get_instance_with_text_content() : void {
 
         // arrange
         $data = [
@@ -50,7 +50,7 @@ class withContent_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_instance_with_json_content() {
+    public function Can_get_instance_with_json_content() : void {
 
         // arrange
         $data = [
@@ -77,7 +77,7 @@ class withContent_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_instance_with_xml_content() {
+    public function Can_get_instance_with_xml_content() : void {
 
         // arrange
         $data = [

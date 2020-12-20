@@ -25,7 +25,7 @@ class getContentType_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_content_type() {
+    public function Can_get_content_type() : void {
 
         // arrange
         $data = [
@@ -55,7 +55,7 @@ class getContentType_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_null_if_content_type_is_not_set() {
+    public function Can_get_null_if_content_type_is_not_set() : void {
 
         // arrange
         $data = [
@@ -83,7 +83,7 @@ class getContentType_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_null_if_content_type_is_invalid() {
+    public function Can_get_null_if_content_type_is_invalid() : void {
 
         // arrange
         $data = [

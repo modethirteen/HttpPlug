@@ -25,7 +25,7 @@ class setRawHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_set_header() {
+    public function Can_set_header() : void {
 
         // arrange
         $headers = new Headers();
@@ -40,7 +40,7 @@ class setRawHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_handle_header_without_value() {
+    public function Can_handle_header_without_value() : void {
 
         // arrange
         $headers = new Headers();
@@ -60,7 +60,7 @@ class setRawHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Cannot_set_multi_value_header_by_default() {
+    public function Cannot_set_multi_value_header_by_default() : void {
 
         // arrange
         $headers = new Headers();
@@ -75,7 +75,7 @@ class setRawHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_set_multi_value_header_with_comma_separation_enabled() {
+    public function Can_set_multi_value_header_with_comma_separation_enabled() : void {
 
         // arrange
         $headers = (new Headers())
@@ -92,7 +92,7 @@ class setRawHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_replace_header() {
+    public function Can_replace_header() : void {
 
         // arrange
         $headers = new Headers();
@@ -108,7 +108,7 @@ class setRawHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_replace_header_with_comma_separation_enabled() {
+    public function Can_replace_header_with_comma_separation_enabled() : void {
 
         // arrange
         $headers = (new Headers())
@@ -126,7 +126,7 @@ class setRawHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_set_empty_value() {
+    public function Can_set_empty_value() : void {
 
         // arrange
         $headers = new Headers();
@@ -141,7 +141,7 @@ class setRawHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_only_set_a_single_empty_value() {
+    public function Can_only_set_a_single_empty_value() : void {
 
         // arrange
         $headers = new Headers();
@@ -158,7 +158,7 @@ class setRawHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Single_value_only_header_constraints_are_ignored_by_default_when_adding_raw_headers() {
+    public function Single_value_only_header_constraints_are_ignored_by_default_when_adding_raw_headers() : void {
 
         // arrange
         $headers = new Headers();
@@ -176,7 +176,7 @@ class setRawHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Single_value_only_header_constraints_are_used_with_raw_header_comma_parsing_enabled() {
+    public function Single_value_only_header_constraints_are_used_with_raw_header_comma_parsing_enabled() : void {
 
         // arrange
         $headers = (new Headers())

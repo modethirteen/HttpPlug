@@ -30,7 +30,7 @@ class getCallCount_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_get_call_count() {
+    public function Can_get_call_count() : void {
 
         // arrange
         $uri1 = XUri::tryParse('test://example.com/@api/deki/pages/=foo');

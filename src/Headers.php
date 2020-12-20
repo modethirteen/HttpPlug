@@ -17,6 +17,7 @@
 namespace modethirteen\Http;
 
 use InvalidArgumentException;
+use modethirteen\TypeEx\StringEx;
 
 /**
  * Class Headers
@@ -84,7 +85,7 @@ class Headers implements IMutableHeaders {
      * @return string
      */
     private static function newRawHeader(string $name, string $value = null) : string {
-        return !StringUtil::isNullOrEmpty($value) ? "{$name}: {$value}" : "{$name}:";
+        return !StringEx::isNullOrEmpty($value) ? "{$name}: {$value}" : "{$name}:";
     }
 
     /**
@@ -202,6 +203,7 @@ class Headers implements IMutableHeaders {
         return $this->name;
     }
 
+    /** @noinspection PhpMissingReturnTypeInspection */
     public function current() {
         return $this->headers[$this->name];
     }
@@ -210,6 +212,7 @@ class Headers implements IMutableHeaders {
         $this->name = next($this->names);
     }
 
+    /** @noinspection PhpMissingReturnTypeInspection */
     public function valid() {
         return $this->name !== false;
     }
@@ -262,10 +265,10 @@ class Headers implements IMutableHeaders {
         }
         if(is_array($value)) {
             return array_map(function($value) {
-                return trim(StringUtil::stringify($value));
+                return trim(StringEx::stringify($value));
             }, $value);
         }
-        return [trim(StringUtil::stringify($value))];
+        return [trim(StringEx::stringify($value))];
     }
 
     /**

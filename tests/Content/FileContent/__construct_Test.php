@@ -25,7 +25,7 @@ class __construct_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Cannot_instantiate_file_content_with_invalid_file_path() {
+    public function Cannot_instantiate_file_content_with_invalid_file_path() : void {
 
         // assert
         $filePath = dirname(__FILE__) . '/foo.png';

@@ -25,7 +25,7 @@ class newFromString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function XUri_roundtrip_test_1() {
+    public function XUri_roundtrip_test_1() : void {
 
         // arrange
         $uriStr = 'http://test.mindtouch.dev/';
@@ -40,7 +40,7 @@ class newFromString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function XUri_roundtrip_test_2() {
+    public function XUri_roundtrip_test_2() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -55,7 +55,7 @@ class newFromString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function XUri_roundtrip_test_3() {
+    public function XUri_roundtrip_test_3() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -70,7 +70,7 @@ class newFromString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Invalid_uri_throws_exception() {
+    public function Invalid_uri_throws_exception() : void {
         $this->expectException(MalformedUriException::class);
 
         // arrange
@@ -83,7 +83,7 @@ class newFromString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Valid_uri_must_have_scheme() {
+    public function Valid_uri_must_have_scheme() : void {
         $this->expectException(MalformedUriException::class);
 
         // arrange
@@ -96,7 +96,7 @@ class newFromString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Valid_uri_must_have_valid_port() {
+    public function Valid_uri_must_have_valid_port() : void {
         $this->expectException(MalformedUriException::class);
 
         // arrange
@@ -109,7 +109,7 @@ class newFromString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_extended_instance() {
+    public function Can_return_extended_instance() : void {
 
         // act
         $result = TestXUri::newFromString('http://user:password@test.mindtouch.dev/?a=b&c=d#fragment');

@@ -25,7 +25,7 @@ class newFromArray_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_valid_instance() {
+    public function Can_return_valid_instance() : void {
 
         // assert
         $array = ['foo' => ['bar' => ['bar', 'qux']]];

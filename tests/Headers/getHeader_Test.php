@@ -24,7 +24,7 @@ class getHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_header_by_case_insensitive_name() {
+    public function Can_get_header_by_case_insensitive_name() : void {
 
         // arrange
         $headers = new Headers();

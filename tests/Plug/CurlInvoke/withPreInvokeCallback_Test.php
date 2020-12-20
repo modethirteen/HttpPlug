@@ -27,7 +27,7 @@ class withPreInvokeCallback_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_execute_callback_and_mutate_request_before_invocation() {
+    public function Can_execute_callback_and_mutate_request_before_invocation() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug();
@@ -51,7 +51,7 @@ class withPreInvokeCallback_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_execute_callback_and_mutate_request_credentials_before_invocation() {
+    public function Can_execute_callback_and_mutate_request_credentials_before_invocation() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()

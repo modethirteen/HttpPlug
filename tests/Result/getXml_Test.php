@@ -24,7 +24,7 @@ class getXml_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_get_value_as_xml() {
+    public function Can_get_value_as_xml() : void {
 
         // arrange
         $data = [
@@ -52,7 +52,7 @@ class getXml_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_get_result_as_xml() {
+    public function Can_get_result_as_xml() : void {
 
         // arrange
         $data = [

@@ -24,7 +24,7 @@ class withoutQueryParam_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_remove_query_parameter() {
+    public function Can_remove_query_parameter() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d&e=f#fragment';
@@ -39,7 +39,7 @@ class withoutQueryParam_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Removing_non_existent_query_parameter_returns_noop() {
+    public function Removing_non_existent_query_parameter_returns_noop() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d&e=f#fragment';
@@ -54,7 +54,7 @@ class withoutQueryParam_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_remove_empty_query_parameter() {
+    public function Can_remove_empty_query_parameter() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c&e=f#fragment';
@@ -69,7 +69,7 @@ class withoutQueryParam_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_extended_instance() {
+    public function Can_return_extended_instance() : void {
 
         // act
         $result = TestXUri::tryParse('http://user:password@test.mindtouch.dev:80/somepath?a=b&c=d&e=f#foo')->withoutQueryParam('c');

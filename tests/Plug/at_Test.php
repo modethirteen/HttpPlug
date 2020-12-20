@@ -25,7 +25,7 @@ class at_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_add_single_path_segment_to_hostname() {
+    public function Can_add_single_path_segment_to_hostname() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com'));
@@ -40,7 +40,7 @@ class at_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_add_multiple_path_segments_to_hostname_1() {
+    public function Can_add_multiple_path_segments_to_hostname_1() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com'));
@@ -49,7 +49,7 @@ class at_Test extends PlugTestCase  {
                 return 'xyz';
             }
         };
-        $func = function() {
+        $func = function() : string {
             return 'asdf';
         };
 
@@ -63,7 +63,7 @@ class at_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_add_multiple_path_segments_to_hostname_2() {
+    public function Can_add_multiple_path_segments_to_hostname_2() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com'));
@@ -78,7 +78,7 @@ class at_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_add_single_path_segment_to_existing_path() {
+    public function Can_add_single_path_segment_to_existing_path() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com/qux'));
@@ -93,7 +93,7 @@ class at_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_add_multiple_path_segments_to_existing_path_1() {
+    public function Can_add_multiple_path_segments_to_existing_path_1() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com/qux'));
@@ -108,7 +108,7 @@ class at_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_add_multiple_path_segments_to_existing_path_2() {
+    public function Can_add_multiple_path_segments_to_existing_path_2() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com/qux'));
@@ -125,7 +125,7 @@ class at_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_add_single_path_segment_to_existing_path_query() {
+    public function Can_add_single_path_segment_to_existing_path_query() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com/qux?a=b&c=d'));
@@ -140,7 +140,7 @@ class at_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_add_multiple_path_segments_to_existing_path_query_1() {
+    public function Can_add_multiple_path_segments_to_existing_path_query_1() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com/qux?a=b&c=d'));
@@ -155,7 +155,7 @@ class at_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_add_multiple_path_segments_to_existing_path_query_2() {
+    public function Can_add_multiple_path_segments_to_existing_path_query_2() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com/qux?a=b&c=d'));
@@ -170,7 +170,7 @@ class at_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_add_single_path_segment_to_existing_query() {
+    public function Can_add_single_path_segment_to_existing_query() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com?a=b&c=d'));
@@ -185,7 +185,7 @@ class at_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_add_multiple_path_segments_to_existing_query_1() {
+    public function Can_add_multiple_path_segments_to_existing_query_1() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com?a=b&c=d'));
@@ -200,7 +200,7 @@ class at_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_add_multiple_path_segments_to_existing_query_2() {
+    public function Can_add_multiple_path_segments_to_existing_query_2() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com?a=b&c=d'));

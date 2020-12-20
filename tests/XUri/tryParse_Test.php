@@ -24,7 +24,7 @@ class tryParse_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_create_XUri_from_valid_uri() {
+    public function Can_create_XUri_from_valid_uri() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -39,7 +39,7 @@ class tryParse_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Invalid_uri_returns_null() {
+    public function Invalid_uri_returns_null() : void {
 
         // arrange
         $uriStr = '#RESTRICTED#';
@@ -54,7 +54,7 @@ class tryParse_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_extended_instance() {
+    public function Can_return_extended_instance() : void {
 
         // act
         $result = TestXUri::tryParse('http://user:password@test.mindtouch.dev/somepath?a=b&c=d&e=f#fragment');

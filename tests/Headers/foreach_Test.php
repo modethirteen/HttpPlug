@@ -24,7 +24,7 @@ class foreach_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_iterate_headers() {
+    public function Can_iterate_headers() : void {
 
         // arrange
         $headers = new Headers();

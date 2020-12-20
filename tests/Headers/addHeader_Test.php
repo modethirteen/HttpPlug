@@ -24,7 +24,7 @@ class addHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_add_multiple_values() {
+    public function Can_add_multiple_values() : void {
 
         // arrange
         $headers = new Headers();
@@ -41,7 +41,7 @@ class addHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_add_empty_value() {
+    public function Can_add_empty_value() : void {
 
         // arrange
         $headers = new Headers();
@@ -56,7 +56,7 @@ class addHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_only_add_a_single_empty_value() {
+    public function Can_only_add_a_single_empty_value() : void {
 
         // arrange
         $headers = new Headers();
@@ -73,7 +73,7 @@ class addHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_add_single_value_only_header_values() {
+    public function Can_add_single_value_only_header_values() : void {
 
         // arrange
         $headers = new Headers();
@@ -92,7 +92,7 @@ class addHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_add_non_string_type_header() {
+    public function Can_add_non_string_type_header() : void {
 
         // arrange
         $headers = new Headers();
@@ -109,7 +109,7 @@ class addHeader_Test extends PlugTestCase {
             }
         });
         $headers->addHeader('fredd', ['qux', true, -10, 5]);
-        $headers->addHeader('barr', function() { return 'bazzzzz'; });
+        $headers->addHeader('barr', function() : string { return 'bazzzzz'; });
 
         // assert
         $this->assertArrayHasKeyValue('Bar', ['true'], $headers->toArray());

@@ -27,6 +27,7 @@ use modethirteen\Http\Exception\ResultParserContentExceedsMaxContentLengthExcept
 use modethirteen\Http\Mock\MockPlug;
 use modethirteen\Http\Mock\MockRequestMatcher;
 use modethirteen\Http\Parser\IResultParser;
+use modethirteen\TypeEx\StringEx;
 
 /**
  * Class Plug - builder and invocation for simple HTTP requests
@@ -92,7 +93,7 @@ class Plug {
      */
     public function __construct(XUri $uri) {
         $this->headers = new Headers();
-        if(StringUtil::isNullOrEmpty($uri->getHost())) {
+        if(StringEx::isNullOrEmpty($uri->getHost())) {
             throw new PlugUriHostRequiredException($uri);
         }
         $this->uri = $uri;
@@ -223,7 +224,7 @@ class Plug {
      */
     public function withUri(XUri $uri, bool $preserveHost = false) : object {
         $plug = clone $this;
-        $host = StringUtil::stringify($plug->uri->getHost());
+        $host = StringEx::stringify($plug->uri->getHost());
         $plug->uri = $uri;
         if($preserveHost) {
             $plug->uri = $plug->uri->withHost($host);
@@ -242,7 +243,7 @@ class Plug {
         $plug = clone $this;
         $path = '';
         foreach($segments as $segment) {
-            $path .= '/' . ltrim(StringUtil::stringify($segment), '/');
+            $path .= '/' . ltrim(StringEx::stringify($segment), '/');
         }
         $plug->uri = $plug->uri->atPath($path);
         return $plug;
@@ -465,14 +466,14 @@ class Plug {
                 $body = $content->toRaw();
 
                 // explicitly set content length 0 if string content is empty
-                if(is_string($body) && StringUtil::isNullOrEmpty($body)) {
+                if(is_string($body) && StringEx::isNullOrEmpty($body)) {
                     $requestHeaders->setHeader(Headers::HEADER_CONTENT_LENGTH, '0');
                 }
             }
 
             // set the content type if provided
             $contentType = $content->getContentType();
-            if($contentType !== null && !StringUtil::isNullOrEmpty($contentType->toString())) {
+            if($contentType !== null && !StringEx::isNullOrEmpty($contentType->toString())) {
                 $requestHeaders->setHeader(Headers::HEADER_CONTENT_TYPE, $contentType->toString());
             }
         } else {
@@ -516,10 +517,10 @@ class Plug {
         ) use (&$responseHeaders, &$rawResponseHeaders) {
             $length = strlen($header);
             $header = trim($header);
-            if(!StringUtil::isNullOrEmpty($header)) {
+            if(!StringEx::isNullOrEmpty($header)) {
                 $rawResponseHeaders[] = $header;
             }
-            if(StringUtil::startsWithInvariantCase($header, 'HTTP/1.1')) {
+            if((new StringEx($header))->startsWithInvariantCase('HTTP/1.1')) {
 
                 // status code means new http message section, we only care out the last section
                 // for operational concerns so reset headers except for set-cookies
@@ -592,7 +593,7 @@ class Plug {
             ->withStatus(curl_getinfo($curl, CURLINFO_HTTP_CODE))
             ->withHeaders($responseHeaders)
             ->withRequestInfo($method, $requestUri, $requestHeaders, $requestStart, $requestEnd);
-        if(!is_bool($httpMessage) && !StringUtil::isNullOrEmpty($httpMessage)) {
+        if(!is_bool($httpMessage) && !StringEx::isNullOrEmpty($httpMessage)) {
             $result = $result->withBody($httpMessage);
         }
         curl_close($curl);

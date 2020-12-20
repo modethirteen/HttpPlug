@@ -24,7 +24,7 @@ class withPostInvokeCallback_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_execute_callback_and_mutate_result_after_invocation() {
+    public function Can_execute_callback_and_mutate_result_after_invocation() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('anything');
@@ -45,7 +45,7 @@ class withPostInvokeCallback_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_execute_callback_after_request_info_has_been_added_and_parsers_have_run() {
+    public function Can_execute_callback_after_request_info_has_been_added_and_parsers_have_run() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('anything');

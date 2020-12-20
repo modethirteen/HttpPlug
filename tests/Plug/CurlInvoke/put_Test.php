@@ -25,7 +25,7 @@ class put_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_invoke_put() {
+    public function Can_invoke_put() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('anything');
@@ -41,7 +41,7 @@ class put_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_invoke_put_with_file_content() {
+    public function Can_invoke_put_with_file_content() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('anything');

@@ -25,7 +25,7 @@ class withHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_set_header_value() {
+    public function Can_set_header_value() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com'));
@@ -40,7 +40,7 @@ class withHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_replace_header_value() {
+    public function Can_replace_header_value() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com'));
@@ -55,7 +55,7 @@ class withHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_set_non_string_type_header() {
+    public function Can_set_non_string_type_header() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com'));
@@ -71,7 +71,7 @@ class withHeader_Test extends PlugTestCase {
                 }
             })
             ->withHeader('fredd', ['qux', true, -10, 5])
-            ->withHeader('barr', function() { return 'bazzzzz'; });
+            ->withHeader('barr', function() : string { return 'bazzzzz'; });
 
         // assert
         $this->assertEquals('true', $plug->getHeaders()->getHeaderLine('Bar'));

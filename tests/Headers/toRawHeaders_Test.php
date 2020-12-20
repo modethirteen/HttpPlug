@@ -24,7 +24,7 @@ class toRawHeaders_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_headers() {
+    public function Can_get_headers() : void {
 
         // arrange
         $headers = new Headers();
@@ -54,7 +54,7 @@ class toRawHeaders_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_multiple_set_cookie_headers() {
+    public function Can_get_multiple_set_cookie_headers() : void {
 
         // arrange
         $headers = new Headers();

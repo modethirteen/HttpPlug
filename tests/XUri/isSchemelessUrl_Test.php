@@ -24,7 +24,7 @@ class isSchemelessUrl_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Is_schemeless_url() {
+    public function Is_schemeless_url() : void {
 
         // act
         $result = XUri::isSchemelessUrl('//example.com/foo');
@@ -36,7 +36,7 @@ class isSchemelessUrl_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Is_not_schemeless_url_1() {
+    public function Is_not_schemeless_url_1() : void {
 
         // act
         $result = XUri::isSchemelessUrl('example.com/foo');
@@ -48,7 +48,7 @@ class isSchemelessUrl_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Is_not_schemeless_url_2() {
+    public function Is_not_schemeless_url_2() : void {
 
         // act
         $result = XUri::isSchemelessUrl('https://example.com/foo');

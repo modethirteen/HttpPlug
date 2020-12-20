@@ -23,7 +23,7 @@ class withTimeout_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_update_request_timeout_before_invocation() {
+    public function Can_update_request_timeout_before_invocation() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('delay', '10');

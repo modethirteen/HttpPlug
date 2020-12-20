@@ -24,7 +24,7 @@ class removeHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_remove_header() {
+    public function Can_remove_header() : void {
 
         // arrange
         $headers = new Headers();

@@ -24,7 +24,7 @@ class getScheme_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_scheme() {
+    public function Can_get_scheme() : void {
 
         // arrange
         $uriStr = 'ftp://user:password@test.mindtouch.dev/foo/bar?a=b&c=d#fragment';

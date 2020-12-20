@@ -25,7 +25,7 @@ class withUri_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_get_instance_with_new_uri() {
+    public function Can_get_instance_with_new_uri() : void {
 
         // arrange
         $plug1 = new Plug(XUri::tryParse('http://foo.com/bar/baz?a=b&c=d'));
@@ -43,7 +43,7 @@ class withUri_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_get_instance_with_new_uri_with_preserved_host() {
+    public function Can_get_instance_with_new_uri_with_preserved_host() : void {
 
         // arrange
         $plug1 = new Plug(XUri::tryParse('http://foo.com/bar/baz?a=b&c=d'));

@@ -16,6 +16,8 @@
  */
 namespace modethirteen\Http;
 
+use modethirteen\TypeEx\StringEx;
+
 class QueryParams implements IMutableQueryParams {
 
     /**
@@ -39,7 +41,7 @@ class QueryParams implements IMutableQueryParams {
         if($query !== null) {
             $pairs = explode('&', $query);
             foreach($pairs as $pair) {
-                if(!StringUtil::isNullOrEmpty($pair)) {
+                if(!StringEx::isNullOrEmpty($pair)) {
                     if(strpos($pair, '=') === false) {
                         $k = $pair;
                         $v = null;
@@ -87,7 +89,7 @@ class QueryParams implements IMutableQueryParams {
     }
 
     public function key() : string {
-        return StringUtil::stringify($this->key);
+        return StringEx::stringify($this->key);
     }
 
     public function next() : void {
@@ -110,7 +112,7 @@ class QueryParams implements IMutableQueryParams {
         if($value === null) {
             unset($this->params[$param]);
         } else {
-            $this->params[$param] = StringUtil::stringify($value);
+            $this->params[$param] = StringEx::stringify($value);
         }
         $this->keys = array_keys($this->params);
         $this->rewind();

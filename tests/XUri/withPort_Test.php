@@ -24,7 +24,7 @@ class withPort_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_set_uri_port() {
+    public function Can_set_uri_port() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -39,7 +39,7 @@ class withPort_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_change_uri_port() {
+    public function Can_change_uri_port() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev:8081/?a=b&c=d#fragment';
@@ -54,7 +54,7 @@ class withPort_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_removes_uri_port() {
+    public function Can_removes_uri_port() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev:8081/?a=b&c=d#fragment';
@@ -69,7 +69,7 @@ class withPort_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_extended_instance() {
+    public function Can_return_extended_instance() : void {
 
         // act
         $result = TestXUri::tryParse('http://user:password@test.mindtouch.dev:80/somepath?a=b&c=d&e=f#foo')->withPort(8080);

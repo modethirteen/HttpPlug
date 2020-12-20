@@ -24,7 +24,7 @@ class is_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_match_content_type_with_parameters() {
+    public function Can_match_content_type_with_parameters() : void {
 
         // arrange
         $contentType1 = ContentType::newFromString(ContentType::XML);
@@ -42,7 +42,7 @@ class is_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_match_content_type_without_parameters() {
+    public function Can_match_content_type_without_parameters() : void {
 
         // arrange
         $contentType1 = ContentType::newFromString('text/html; charset=latin');
@@ -60,7 +60,7 @@ class is_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_fail_if_content_type_not_matched_with_parameters() {
+    public function Can_fail_if_content_type_not_matched_with_parameters() : void {
 
         // arrange
         $contentType1 = ContentType::newFromString('text/html; charset=utf-8');
@@ -78,7 +78,7 @@ class is_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_fail_if_content_type_not_matched_without_parameters() {
+    public function Can_fail_if_content_type_not_matched_without_parameters() : void {
 
         // arrange
         $contentType1 = ContentType::newFromString('text/html; charset=utf-8');

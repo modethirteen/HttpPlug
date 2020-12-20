@@ -36,8 +36,8 @@ class with_Test extends PlugTestCase {
                     return 'fred';
                 }
             }, 'http://user:password@test.mindtouch.dev/?a=b&c=d&foo=fred#fragment'],
-            [['qux', true, -10, 5], 'http://user:password@test.mindtouch.dev/?a=b&c=d&foo=qux%2C1%2C-10%2C5#fragment'],
-            [function() { return 'bazz'; }, 'http://user:password@test.mindtouch.dev/?a=b&c=d&foo=bazz#fragment']
+            [['qux', true, -10, 5], 'http://user:password@test.mindtouch.dev/?a=b&c=d&foo=qux%2Ctrue%2C-10%2C5#fragment'],
+            [function() : string { return 'bazz'; }, 'http://user:password@test.mindtouch.dev/?a=b&c=d&foo=bazz#fragment']
         ];
     }
 
@@ -62,7 +62,7 @@ class with_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_extended_instance() {
+    public function Can_return_extended_instance() : void {
 
         // act
         $result = TestXUri::tryParse('http://user:password@test.mindtouch.dev/somepath?a=b&c=d&e=f#fragment')->with('foo', 'bar');

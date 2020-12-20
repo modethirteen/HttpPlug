@@ -24,7 +24,7 @@ class getQueryParam_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_param() {
+    public function Can_get_param() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/foo/bar?a=b&c=d#fragment';
@@ -39,7 +39,7 @@ class getQueryParam_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_empty_param() {
+    public function Can_get_empty_param() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/foo/bar?a=b&c=d#fragment';
@@ -54,7 +54,7 @@ class getQueryParam_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_numeric_param() {
+    public function Can_get_numeric_param() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/foo/bar?a=b&123=d&c=#fragment';

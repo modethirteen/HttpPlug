@@ -24,7 +24,7 @@ class getPath_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_path() {
+    public function Can_get_path() : void {
 
         // arrange
         $uriStr = 'ftp://user:password@test.mindtouch.dev/foo/bar?a=b&c=d#fragment';
@@ -39,7 +39,7 @@ class getPath_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_homepage_path_without_slash() {
+    public function Can_get_homepage_path_without_slash() : void {
 
         // arrange
         $uriStr = 'ftp://user:password@test.mindtouch.dev?a=b&c=d#fragment';
@@ -54,7 +54,7 @@ class getPath_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_homepage_path_with_slash() {
+    public function Can_get_homepage_path_with_slash() : void {
 
         // arrange
         $uriStr = 'ftp://user:password@test.mindtouch.dev/?a=b&c=d#fragment';

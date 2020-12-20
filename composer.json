@@ -15,7 +15,8 @@
   },
   "require": {
     "php": "^7.2.0",
-    "modethirteen/xarray": "~1.2.0",
+    "modethirteen/xarray": "^1.2.2",
+    "modethirteen/type-ex": "^1.0.0",
     "ext-fileinfo": "*",
     "ext-json": "*",
     "ext-curl": "*"

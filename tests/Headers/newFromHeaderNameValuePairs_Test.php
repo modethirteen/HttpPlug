@@ -25,7 +25,7 @@ class newFromHeaderNameValuePairs_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_headers_from_pairs() {
+    public function Can_return_headers_from_pairs() : void {
 
         // act
         $headers = Headers::newFromHeaderNameValuePairs([
@@ -44,7 +44,7 @@ class newFromHeaderNameValuePairs_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Cannot_return_headers_from_pairs_if_invalid_structure() {
+    public function Cannot_return_headers_from_pairs_if_invalid_structure() : void {
 
         // act
         $exceptionThrown = false;

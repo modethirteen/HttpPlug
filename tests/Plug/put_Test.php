@@ -27,7 +27,7 @@ class put_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Cannot_invoke_put_with_body() {
+    public function Cannot_invoke_put_with_body() : void {
 
         // arrange
         $uri = XUri::tryParse('https://example.com/foo');

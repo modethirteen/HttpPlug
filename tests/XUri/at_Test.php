@@ -24,7 +24,7 @@ class at_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_add_path_segments() {
+    public function Can_add_path_segments() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -33,7 +33,7 @@ class at_Test extends PlugTestCase {
                 return 'xyz';
             }
         };
-        $func = function() {
+        $func = function() : string {
             return 'asdf';
         };
 
@@ -47,7 +47,7 @@ class at_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_add_path_string() {
+    public function Can_add_path_string() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -62,7 +62,7 @@ class at_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_preserve_slashes() {
+    public function Can_preserve_slashes() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev';
@@ -77,7 +77,7 @@ class at_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Will_do_nothing_if_empty_path_segments() {
+    public function Will_do_nothing_if_empty_path_segments() : void {
 
             // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/a/b/c';

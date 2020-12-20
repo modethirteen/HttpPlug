@@ -16,7 +16,7 @@
  */
 namespace modethirteen\Http\Content;
 
-use modethirteen\Http\StringUtil;
+use modethirteen\TypeEx\StringEx;
 
 /**
  * Class ContentType
@@ -52,7 +52,7 @@ class ContentType {
         $parameters = [];
         array_shift($parts);
         foreach($parts as $part) {
-            if(!StringUtil::isNullOrEmpty($part)) {
+            if(!StringEx::isNullOrEmpty($part)) {
                 if(strpos($part, '=') === false) {
                     $k = $part;
                     $v = null;
@@ -115,7 +115,7 @@ class ContentType {
      * @return bool
      */
     public function isJson() : bool {
-        return $this->subType === 'json' || StringUtil::endsWith($this->subType, '+json');
+        return $this->subType === 'json' || (new StringEx($this->subType))->endsWith('+json');
     }
 
     /**

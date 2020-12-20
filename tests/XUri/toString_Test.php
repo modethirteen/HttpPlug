@@ -24,7 +24,7 @@ class toString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Does_not_removes_trailing_slash_from_path_if_it_was_included() {
+    public function Does_not_removes_trailing_slash_from_path_if_it_was_included() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/somepath/?a=b&c=d#fragment';
@@ -39,7 +39,7 @@ class toString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Does_not_remove_trailing_slash_from_homepage_path_if_it_was_included_1() {
+    public function Does_not_remove_trailing_slash_from_homepage_path_if_it_was_included_1() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -54,7 +54,7 @@ class toString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Does_not_remove_trailing_slash_from_homepage_path_if_it_was_included_2() {
+    public function Does_not_remove_trailing_slash_from_homepage_path_if_it_was_included_2() : void {
 
         // arrange
         $uriStr = 'http://test.mindtouch.dev/';
@@ -69,7 +69,7 @@ class toString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Does_not_add_trailing_slash_from_path_if_it_was_not_included() {
+    public function Does_not_add_trailing_slash_from_path_if_it_was_not_included() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/somepath?a=b&c=d#fragment';
@@ -84,7 +84,7 @@ class toString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Does_not_add_trailing_slash_to_homepage_path_if_it_was_not_included_1() {
+    public function Does_not_add_trailing_slash_to_homepage_path_if_it_was_not_included_1() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -99,7 +99,7 @@ class toString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Does_not_add_trailing_slash_to_homepage_path_if_it_was_not_included_2() {
+    public function Does_not_add_trailing_slash_to_homepage_path_if_it_was_not_included_2() : void {
 
         // arrange
         $uriStr = 'http://test.mindtouch.dev/';

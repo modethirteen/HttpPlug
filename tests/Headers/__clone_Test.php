@@ -24,7 +24,7 @@ class __clone_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_deep_copy() {
+    public function Can_deep_copy() : void {
 
         // arrange
         $headers = new Headers();

@@ -24,7 +24,7 @@ class toSanitizedUri_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_scrub_basic_auth_password() {
+    public function Can_scrub_basic_auth_password() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/somepath?a=b&c=d#fragment';
@@ -39,7 +39,7 @@ class toSanitizedUri_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_scrub_query_params() {
+    public function Can_scrub_query_params() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/somepath?a=b&c=d&e=f#fragment';
@@ -54,7 +54,7 @@ class toSanitizedUri_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_extended_instance() {
+    public function Can_return_extended_instance() : void {
 
         // act
         $result = TestXUri::tryParse('http://user:password@test.mindtouch.dev/somepath?a=b&c=d&e=f#fragment')->toSanitizedUri(['c', 'e']);

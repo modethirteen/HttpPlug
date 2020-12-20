@@ -25,7 +25,7 @@ class __clone_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_deep_copy() {
+    public function Can_deep_copy() : void {
 
         // arrange
         $plug = new Plug(XUri::newFromString('https://foo.example.com/bar'));

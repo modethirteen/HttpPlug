@@ -31,7 +31,7 @@ class head_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_invoke_head() {
+    public function Can_invoke_head() : void {
 
         // arrange
         $uri = XUri::tryParse('test://example.com/foo');
@@ -51,7 +51,7 @@ class head_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_invoke_head_with_credentials() {
+    public function Can_invoke_head_with_credentials() : void {
 
         // arrange
         $uri = XUri::tryParse('test://example.com/foo');

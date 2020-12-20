@@ -25,7 +25,7 @@ class withAutoRedirects_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_follow_redirects_by_default() {
+    public function Can_follow_redirects_by_default() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('redirect', '1');
@@ -46,7 +46,7 @@ class withAutoRedirects_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_follow_redirect_by_method() {
+    public function Can_follow_redirect_by_method() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug();
@@ -69,7 +69,7 @@ class withAutoRedirects_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_set_max_auto_redirects() {
+    public function Can_set_max_auto_redirects() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('redirect', '3');
@@ -86,7 +86,7 @@ class withAutoRedirects_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_disable_auto_redirect() {
+    public function Can_disable_auto_redirect() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('redirect', '1');

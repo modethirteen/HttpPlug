@@ -25,7 +25,7 @@ class withScheme_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_change_uri_scheme() {
+    public function Can_change_uri_scheme() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -40,7 +40,7 @@ class withScheme_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Cannot_set_empty_uri_scheme() {
+    public function Cannot_set_empty_uri_scheme() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -60,7 +60,7 @@ class withScheme_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_extended_instance() {
+    public function Can_return_extended_instance() : void {
 
         // act
         $result = TestXUri::tryParse('http://user:password@test.mindtouch.dev:80/somepath?a=b&c=d&e=f#foo')->withScheme('https');

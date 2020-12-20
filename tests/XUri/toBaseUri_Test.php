@@ -24,7 +24,7 @@ class toBaseUri_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_base_uri() {
+    public function Can_get_base_uri() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/somepath?a=b&c=d#fragment';

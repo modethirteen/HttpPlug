@@ -29,7 +29,7 @@ class withAddedHeaders_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_add_headers() {
+    public function Can_add_headers() : void {
 
         // arrange
         $matcher = (new MockRequestMatcher(Plug::METHOD_POST, XUri::tryParse('http://example.com/bazz')))

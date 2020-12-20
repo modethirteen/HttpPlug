@@ -24,7 +24,7 @@ class getSetCookieHeaderLine_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_header_lines_by_cookie_names() {
+    public function Can_get_header_lines_by_cookie_names() : void {
 
         // arrange
         $headers = new Headers();
@@ -47,7 +47,7 @@ class getSetCookieHeaderLine_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Will_get_null_if_no_set_cookie_headers_set() {
+    public function Will_get_null_if_no_set_cookie_headers_set() : void {
 
         // arrange
         $headers = new Headers();

@@ -24,7 +24,7 @@ class getCurlError_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_get_curl_error() {
+    public function Can_get_curl_error() : void {
 
         // arrange
         $data = [
@@ -44,7 +44,7 @@ class getCurlError_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Will_get_null_if_no_curl_error() {
+    public function Will_get_null_if_no_curl_error() : void {
 
         // arrange
         $data = [

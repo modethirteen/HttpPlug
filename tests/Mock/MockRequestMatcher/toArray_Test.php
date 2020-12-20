@@ -27,7 +27,7 @@ class toArray_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_get_array() {
+    public function Can_get_array() : void {
 
         // arrange
         $matcher = (new MockRequestMatcher(Plug::METHOD_POST, XUri::tryParse('http://example.com')))

@@ -24,7 +24,7 @@ class isCurlError_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Is_curl_error() {
+    public function Is_curl_error() : void {
 
         // arrange
         $data = [
@@ -43,7 +43,7 @@ class isCurlError_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Is_not_curl_error() {
+    public function Is_not_curl_error() : void {
 
         // arrange
         $data = [

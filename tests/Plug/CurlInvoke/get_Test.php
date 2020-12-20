@@ -24,7 +24,7 @@ class get_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_invoke_get() {
+    public function Can_invoke_get() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('anything');
@@ -40,7 +40,7 @@ class get_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Can_invoke_get_with_credentials() {
+    public function Can_invoke_get_with_credentials() : void {
 
         // arrange
         $plug = $this->newHttpBinPlug()->at('basic-auth', 'qux', 'baz')

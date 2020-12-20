@@ -27,7 +27,7 @@ class withRequestInfo_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_instance_with_request_info() {
+    public function Can_get_instance_with_request_info() : void {
 
         // arrange
         $data = [

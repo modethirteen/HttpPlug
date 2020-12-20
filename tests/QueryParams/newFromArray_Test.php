@@ -24,7 +24,7 @@ class newFromArray_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_construct_from_array() {
+    public function Can_construct_from_array() : void {
 
         // act
         $params = QueryParams::newFromArray([
@@ -40,10 +40,10 @@ class newFromArray_Test extends PlugTestCase {
                 }
             },
             'd' => ['qux', true, -10, 5],
-            'e' => function() { return 'bazz'; }
+            'e' => function() : string { return 'bazz'; }
         ]);
 
         // assert
-        $this->assertEquals('foo=%21%40%25%24&sherlock=holmes&baz=true&qux=false&a=0&b=-10&c=fred&d=qux%2C1%2C-10%2C5&e=bazz', $params->toString());
+        $this->assertEquals('foo=%21%40%25%24&sherlock=holmes&baz=true&qux=false&a=0&b=-10&c=fred&d=qux%2Ctrue%2C-10%2C5&e=bazz', $params->toString());
     }
 }

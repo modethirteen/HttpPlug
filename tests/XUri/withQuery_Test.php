@@ -25,7 +25,7 @@ class withQuery_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_set_query_string() {
+    public function Can_set_query_string() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/#fragment';
@@ -40,7 +40,7 @@ class withQuery_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_replace_query_string() {
+    public function Can_replace_query_string() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -55,7 +55,7 @@ class withQuery_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Cannot_include_question_mark_symbol_in_query_string() {
+    public function Cannot_include_question_mark_symbol_in_query_string() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#fragment';
@@ -75,7 +75,7 @@ class withQuery_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_extended_instance() {
+    public function Can_return_extended_instance() : void {
 
         // act
         $result = TestXUri::tryParse('http://user:password@test.mindtouch.dev:80/somepath?a=b&c=d&e=f#foo')->withQuery('foo=bar');

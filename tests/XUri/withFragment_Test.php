@@ -24,7 +24,7 @@ class withFragment_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_set_fragment() {
+    public function Can_set_fragment() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d';
@@ -39,7 +39,7 @@ class withFragment_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_change_fragment() {
+    public function Can_change_fragment() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d#foo';
@@ -54,7 +54,7 @@ class withFragment_Test extends PlugTestCase {
      /**
      * @test
      */
-    public function Can_remove_fragment() {
+    public function Can_remove_fragment() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?a=b&c=d';
@@ -69,7 +69,7 @@ class withFragment_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_extended_instance() {
+    public function Can_return_extended_instance() : void {
 
         // act
         $result = TestXUri::tryParse('http://user:password@test.mindtouch.dev/somepath?a=b&c=d&e=f')->withFragment('foo');

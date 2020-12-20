@@ -24,7 +24,7 @@ class getQuery_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_query() {
+    public function Can_get_query() : void {
 
         // arrange
         $uriStr = 'ftp://user:password@test.mindtouch.dev/foo/bar?a=b&c=d#fragment';

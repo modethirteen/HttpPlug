@@ -24,7 +24,7 @@ class isServerError_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function HTTP_400_range_is_not_server_error() {
+    public function HTTP_400_range_is_not_server_error() : void {
 
         // arrange
         $data = ['status' => 400];

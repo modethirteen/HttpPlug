@@ -25,7 +25,7 @@ class with_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Add_single_param_to_hostname() {
+    public function Add_single_param_to_hostname() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com'));
@@ -40,7 +40,7 @@ class with_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Add_multiple_params_to_hostname() {
+    public function Add_multiple_params_to_hostname() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com'));
@@ -57,7 +57,7 @@ class with_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Add_single_param_to_existing_path() {
+    public function Add_single_param_to_existing_path() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com/qux'));
@@ -72,7 +72,7 @@ class with_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Add_multiple_params_to_existing_path() {
+    public function Add_multiple_params_to_existing_path() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com/qux'));
@@ -89,7 +89,7 @@ class with_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Add_single_param_to_existing_path_query() {
+    public function Add_single_param_to_existing_path_query() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com/qux?a=b&c=d'));
@@ -104,7 +104,7 @@ class with_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Add_multiple_params_to_existing_path_query() {
+    public function Add_multiple_params_to_existing_path_query() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com/qux?a=b&c=d'));
@@ -121,7 +121,7 @@ class with_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Add_single_param_to_existing_query() {
+    public function Add_single_param_to_existing_query() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com?a=b&c=d'));
@@ -136,7 +136,7 @@ class with_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Add_multiple_params_to_existing_query() {
+    public function Add_multiple_params_to_existing_query() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com?a=b&c=d'));
@@ -151,7 +151,7 @@ class with_Test extends PlugTestCase  {
     /**
      * @test
      */
-    public function Add_non_string_type_param() {
+    public function Add_non_string_type_param() : void {
 
         // arrange
         $plug = new Plug(XUri::tryParse('http://foo.com'));
@@ -168,9 +168,9 @@ class with_Test extends PlugTestCase  {
                 }
             })
             ->with('fredd', ['qux', true, -10, 5])
-            ->with('barr', function() { return 'bazzzzz'; });
+            ->with('barr', function() : string { return 'bazzzzz'; });
 
         // assert
-        $this->assertEquals('http://foo.com?bar=true&fred=false&baz=0&qux=-10&bazz=zzz&fredd=qux%2C1%2C-10%2C5&barr=bazzzzz', $plug->getUri());
+        $this->assertEquals('http://foo.com?bar=true&fred=false&baz=0&qux=-10&bazz=zzz&fredd=qux%2Ctrue%2C-10%2C5&barr=bazzzzz', $plug->getUri());
     }
 }

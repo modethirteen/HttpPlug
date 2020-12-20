@@ -24,7 +24,7 @@ class getHost_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_host() {
+    public function Can_get_host() : void {
 
         // arrange
         $uriStr = 'ftp://user:password@test.mindtouch.dev/foo/bar?a=b&c=d#fragment';
@@ -39,7 +39,7 @@ class getHost_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_get_file_uri_null_host() {
+    public function Can_get_file_uri_null_host() : void {
 
         // arrange
         $uriStr = 'file:///etc/passwd';

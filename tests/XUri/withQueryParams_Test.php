@@ -25,7 +25,7 @@ class withQueryParams_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_set_query_parameters() {
+    public function Can_set_query_parameters() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/#fragment';
@@ -43,7 +43,7 @@ class withQueryParams_Test extends PlugTestCase {
                 }
             },
             'd' => ['qux', true, -10, 5],
-            'e' => function() { return 'bazz'; }
+            'e' => function() : string { return 'bazz'; }
         ] as $param => $value) {
             $params->set($param, $value);
         }
@@ -53,7 +53,7 @@ class withQueryParams_Test extends PlugTestCase {
 
         // assert
         $this->assertEquals(
-            'http://user:password@test.mindtouch.dev/?foo=%21%40%25%24&sherlock=holmes&baz=true&qux=false&a=0&b=-10&c=fred&d=qux%2C1%2C-10%2C5&e=bazz#fragment',
+            'http://user:password@test.mindtouch.dev/?foo=%21%40%25%24&sherlock=holmes&baz=true&qux=false&a=0&b=-10&c=fred&d=qux%2Ctrue%2C-10%2C5&e=bazz#fragment',
             $result
         );
     }
@@ -61,7 +61,7 @@ class withQueryParams_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_add_query_parameters() {
+    public function Can_add_query_parameters() : void {
 
         // arrange
         $uriStr = 'http://user:password@test.mindtouch.dev/?z=b&x=d#fragment';
@@ -79,7 +79,7 @@ class withQueryParams_Test extends PlugTestCase {
                 }
             },
             'd' => ['qux', true, -10, 5],
-            'e' => function() { return 'bazz'; }
+            'e' => function() : string { return 'bazz'; }
         ] as $param => $value) {
             $params->set($param, $value);
         }
@@ -89,7 +89,7 @@ class withQueryParams_Test extends PlugTestCase {
 
         // assert
         $this->assertEquals(
-            'http://user:password@test.mindtouch.dev/?z=b&x=d&foo=%21%40%25%24&sherlock=holmes&baz=true&qux=false&a=0&b=-10&c=fred&d=qux%2C1%2C-10%2C5&e=bazz#fragment',
+            'http://user:password@test.mindtouch.dev/?z=b&x=d&foo=%21%40%25%24&sherlock=holmes&baz=true&qux=false&a=0&b=-10&c=fred&d=qux%2Ctrue%2C-10%2C5&e=bazz#fragment',
             $result
         );
     }
@@ -97,7 +97,7 @@ class withQueryParams_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_extended_instance() {
+    public function Can_return_extended_instance() : void {
 
         // arrange
         $params = new QueryParams();

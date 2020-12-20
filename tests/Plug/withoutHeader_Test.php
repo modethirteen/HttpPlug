@@ -25,7 +25,7 @@ class withoutHeader_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_remove_header_value() {
+    public function Can_remove_header_value() : void {
 
         // arrange
         $plug = (new Plug(XUri::tryParse('http://foo.com')))

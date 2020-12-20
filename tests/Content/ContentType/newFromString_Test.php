@@ -104,7 +104,7 @@ class newFromString_Test extends PlugTestCase {
     /**
      * @test
      */
-    public function Can_return_null_from_invalid_header_line() {
+    public function Can_return_null_from_invalid_header_line() : void {
 
         // act
         $result1 = ContentType::newFromString('');
