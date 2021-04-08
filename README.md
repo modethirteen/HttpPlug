@@ -223,5 +223,6 @@ docker-compose up -d
 vendor/bin/phpstan analyse
 
 # run tests
+export HTTPBIN_BASEURI=http://localhost:8080
 vendor/bin/phpunit --configuration phpunit.xml.dist
 ```
