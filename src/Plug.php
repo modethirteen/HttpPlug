@@ -532,7 +532,7 @@ class Plug {
                 return $length;
             } else {
                 try {
-                    $responseHeaders->setRawHeader($header);
+                    $responseHeaders->addRawHeader($header);
                 } catch(InvalidArgumentException $e) {
 
                     // TODO (modethirteen, 20180424): add a handler for invalid http headers
