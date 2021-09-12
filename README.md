@@ -7,8 +7,7 @@ A PHP library for plugging into HTTP sockets.
 [![Latest Stable Version](https://poser.pugx.org/modethirteen/hyperplug/version.svg)](https://packagist.org/packages/modethirteen/hyperplug)
 [![Latest Unstable Version](https://poser.pugx.org/modethirteen/hyperplug/v/unstable)](https://packagist.org/packages/modethirteen/hyperplug)
 
-* PHP 7.2, 7.3, 7.4 (1.x)
-* PHP 7.4 (main)
+* PHP 7.4 (main, 2.x)
 
 ## Installation
 
