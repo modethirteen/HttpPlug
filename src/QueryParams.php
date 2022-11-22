@@ -106,7 +106,12 @@ class QueryParams implements IMutableQueryParams {
         return isset($this->params[$param]) ? $this->params[$param] : null;
     }
 
-    public function set(string $param, $value) : void {
+    /**
+     * @param string|int $param
+     * @param $value
+     * @return void
+     */
+    public function set($param, $value) : void {
         if($value === null) {
             unset($this->params[$param]);
         } else {
